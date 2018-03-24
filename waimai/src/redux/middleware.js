@@ -1,5 +1,5 @@
 import http from '../utils/httpclient'
-import * as constants from '../component/datagrid/datagridconstants'
+import * as constants from '../components/datagrid/datagridconstants'
 
 export default function(api){
     return function(dispatch){
