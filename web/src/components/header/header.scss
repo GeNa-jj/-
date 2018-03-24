@@ -1,0 +1,11 @@
+header{
+    background-color: #fff;display: flex;border-bottom: 2px solid #e1e1e1;align-items: center;
+    .header_l{
+        height: 102px;width: 25%;
+        i{font-size: 60px;line-height: 102px;margin-left: 20px;color: #f00;}
+    }
+    .header_c{height: 102px;background: url(../../assets/imgs/title.png) no-repeat 50%!important;;background-size: auto 40px!important;width: 50%;flex: 1;text-align: center;text-indent: -9999em;padding: 10px;}
+    .header_r{width: 25%;text-align: right;padding-right: 20px;
+        a{color: #e94f4f;font-size: 26px;}
+    }
+}
