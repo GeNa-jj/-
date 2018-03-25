@@ -1,0 +1,5 @@
+.home{
+    display: flex;flex-direction: column;height: 100%;
+    .home_body{flex: 1;overflow-y: auto;background-color: #f6f6f6;}
+    .home_footer{height: 100px;background-color: #f00}
+}
