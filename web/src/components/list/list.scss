@@ -1,7 +1,7 @@
 .list{
     display: flex;flex-direction: column;height: 100%;
     .list_body{
-        flex: 1;
+        flex: 1;overflow-y: auto;
         .list_banner{height: 220px;background-color: #fc0;padding-bottom: 1px;}
         .list_main{
             height: 100%;background-color: #fcc;padding-top: 10px;overflow: hidden;
