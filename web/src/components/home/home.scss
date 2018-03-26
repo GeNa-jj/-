@@ -1,5 +1,83 @@
 .home{
     display: flex;flex-direction: column;height: 100%;
-    .home_body{flex: 1;overflow-y: auto;background-color: #f6f6f6;}
-    .home_footer{height: 1.333333rem;background-color: #f00}
+    .home_body{
+        flex: 1;overflow-y: auto;background-color: #f6f6f6;
+        .carousel{
+            background-color: skyblue;
+            height: 3.125rem;
+        }
+        .registerTips{
+            height: 1.466667rem;
+            background-color:#ccc;
+            line-height: 1.466667rem;
+            font-size: 0.5rem;
+            font-weight: 600;
+            padding-left: .72rem;
+        }
+        .home_menu-list{
+            width:100%;
+            overflow:hidden;
+            overflow-x: auto;
+            background-color: #f6f6f6;
+            ul{
+                display:flex;
+                float:left;
+                li{
+                    width: 3.52rem;
+                    height: 4.853333rem;
+                    text-align: center;
+                    background-color: red;
+                    margin: .693333rem 0 .613333rem .32rem;
+                    overflow: hidden;
+                    flex-wrap: nowrap;
+                    border-radius: .106667rem;
+                    img{
+                        width: 3.52rem;
+                        height: 4.853333rem;
+                        border: none;
+                    }
+                    .info{
+                        display: flex;
+                        font-weight: 600;
+                        font-size: .346667rem;
+                        z-index: 1;
+                        color: #fff;
+                        margin-top: -1.04rem;
+                        .text{
+                            padding-top: 0.296875rem;
+                            padding-left: .266667rem;
+                        }
+                    }
+                }
+            }
+        }
+        .home_recommend{
+            display: flex;
+            text-align: center;
+            padding-top: .4rem;
+            padding-bottom: .133333rem;
+            border-radius: .266667rem;
+            background-color: #fff;
+            span{
+                flex-grow: 2;
+                font-size: .426667rem;
+                position: relative;
+                padding: .106667rem 0;
+                    a{
+                        font-weight: 500;
+                        color: #66b450;
+                        letter-spacing: .026667rem;
+                    }
+            }
+        }
+    }
+    .home_footer{height: 100px;background-color: #f00;
+        .dingcan{
+            font-size:40px;
+            color:#fff;
+            display:block;
+            line-height: 100px;
+            margin-left: 300px;
+        }
+    }
 }
