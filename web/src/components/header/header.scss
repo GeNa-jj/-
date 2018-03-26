@@ -1,11 +1,11 @@
 header{
-    background-color: #fff;display: flex;border-bottom: 2px solid #e1e1e1;align-items: center;
+    background-color: #fff;display: flex;border-bottom: 0.026667rem solid #e1e1e1;align-items: center;
     .header_l{
-        height: 102px;width: 25%;
-        i{font-size: 60px;line-height: 102px;margin-left: 20px;color: #f00;}
+        height: 1.386667rem;width: 25%;
+        i{font-size: 0.8rem;line-height: 1.36rem;margin-left: 0.266667rem;color: #f00;}
     }
-    .header_c{height: 102px;background: url(../../assets/imgs/title.png) no-repeat 50%!important;;background-size: auto 40px!important;width: 50%;flex: 1;text-align: center;text-indent: -9999em;padding: 10px;}
-    .header_r{width: 25%;text-align: right;padding-right: 20px;
-        a{color: #e94f4f;font-size: 26px;}
+    .header_c{height: 1.386667rem;background: url(../../assets/imgs/title.png) no-repeat 50%!important;;background-size: auto 0.533333rem!important;width: 50%;flex: 1;text-align: center;text-indent: -9999em;padding: 0.133333rem;}
+    .header_r{width: 25%;text-align: right;padding-right: 0.266667rem;
+        a{color: #e94f4f;font-size: 0.346667rem;}
     }
 }

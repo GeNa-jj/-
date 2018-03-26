@@ -13,7 +13,9 @@ function filterUrl(url){
 export default {
     get(url, params){
         return new Promise((resolve, reject) => {
-            http.get(filterUrl(url)).query(params || {}).end((error, res) => {
+            http.get(filterUrl(url))
+            .query(params || {})
+            .end((error, res) => {
                 if(error){
                     reject(error);
                 }else{
@@ -24,7 +26,10 @@ export default {
     },
     post(url, params){
         return new Promise((resolve, reject) => {
-            http.post(filterUrl(url)).type('application/x-www-form-urlencoded').send(params || {}).end((error, res) => {
+            http.post(filterUrl(url))
+            .set('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8')
+            .send(params || {})
+            .end((error, res) => {
                 if(error){
                     reject(error);
                 }else{

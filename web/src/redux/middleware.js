@@ -1,5 +1,4 @@
 import http from '../utils/httpclient'
-import * as constants from '../components/datagrid/datagridconstants'
 
 export default function(api){
     return function(dispatch){
@@ -11,18 +10,21 @@ export default function(api){
                return dispatch(action)
             }
 
-            dispatch({type: constants.Requesting})
+            dispatch({type: types[0] || type});
 
-            http[method](url, data).then((res) => {
-                let _action = {
-                    type: constants.Requested,
-                    name,
-                    result: res.data
-                }
-                dispatch(_action)
-            }).catch((error) => {
-                dispatch({type: constants.RequestError})
-            })
+            return new Promise((resolve, reject) => {
+                http[method](url, data).then(res => {
+                    dispatch({
+                        type: types[1] || type,
+                        name,
+                        result: res
+                    });
+                    resolve(res);
+                }).catch(error => {
+                    dispatch({type: types[2] || type});
+                    reject(error);
+                });
+            });
         }
     }
 }

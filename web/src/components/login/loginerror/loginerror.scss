@@ -1,0 +1,20 @@
+.error{
+    position: relative;
+    min-height: 0.506667rem;
+    line-height: 0.506667rem;
+    padding: 0.133333rem 0 0.133333rem 1.6rem;
+    color: #ff5961;
+    background-color: #ffecec;
+    font-size: 0.373333rem;
+}
+.error::before{
+    content: "";
+    position: absolute;
+    top: -0.506667rem;
+    left: 0.8rem;
+    display: block;
+    width: 0;
+    height: 0;
+    border: .266667rem solid;
+    border-color: transparent transparent #ffecec;
+}

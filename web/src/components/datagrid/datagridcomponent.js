@@ -7,22 +7,22 @@ import * as actions from './datagridaction'
 
 class DatagridComponent extends React.Component{
     getKeys(item){
-        return item ? Object.keys(item) : [];
+        return item ? Object.keys(item) : []
     }
     selectTr(item){
-        if(this.props.config.cb){
-            this.props.config.cb(item)
-        }
+        
     }
     componentWillMount(){
-        this.props.refresh(this.props.config)
+        // this.props.refresh(this.props.config)
     }
     render(){
-        let ds = this.props.dataset; ///{student: {dataset: []}, modal: {dataset: []}}
+        // console.log(this.props)
+             
+        let ds = this.props.dataset;
         let name = this.props.config.name;
         if(name){
             ds = ds[name] ? ds[name].dataset : []
-        } else {
+        }else{
             ds = ds.dataset;
         }
         return (
@@ -60,12 +60,12 @@ class DatagridComponent extends React.Component{
     }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state) => {   
     return {
-        dataset: state.datagrid, //{student: {dataset: []}, modal: {dataset: []}}
+        dataset: state.datagrid,
         show: state.datagrid.show,
         error: state.datagrid.error
     }
 }
 
-export default connect(mapStateToProps, actions)(DatagridComponent);
+export default connect(mapStateToProps,actions)(DatagridComponent)

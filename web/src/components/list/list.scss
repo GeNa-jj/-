@@ -2,9 +2,9 @@
     display: flex;flex-direction: column;height: 100%;
     .list_body{
         flex: 1;overflow-y: auto;
-        .list_banner{height: 220px;background-color: #fc0;padding-bottom: 1px;}
+        .list_banner{height: 2.933333rem;background-color: #fc0;padding-bottom: 0.013333rem;}
         .list_main{
-            height: 100%;background-color: #fcc;padding-top: 10px;overflow: hidden;
+            height: 100%;background-color: #fcc;padding-top: 0.133333rem;overflow: hidden;
         }
     }
 }
