@@ -9,7 +9,10 @@ export default class HomeComponent extends React.Component{
             <div className="home">
                 <HeaderComponent></HeaderComponent>
                 <div className="home_body">
-                    <div className="carousel"></div>
+                    <div className="carousel">
+                        <div className="carousel-box">
+                        </div>
+                    </div>
                     <div className="registerTips">你好,登录会员中心,享受更多特权</div>
                     <div className="home_menu-list">
                         <ul>
@@ -25,6 +28,26 @@ export default class HomeComponent extends React.Component{
                     <div className="home_recommend">
                         <span className="left"><a>当季特选</a></span>
                         <span><a>登录享更多优惠</a></span>
+                    </div>
+                    <div className="home-activity">
+                        <h2><span>优惠活动</span></h2>
+                        <div className="home-activity-item">
+                            <a>
+                                <p><img src="src/assets/imgs/active-item.jpg"/></p>
+                                <div>全新必胜客V享会，缤纷礼遇享不停</div>
+                            </a>
+                        </div>
+                    </div>
+                    <div className="home-wei">
+                        <div>
+                            <a>法律条款</a>
+                            <a className="two">经营公示</a>
+                            <a>隐私条款</a>
+                        </div>
+                        <div className="company-Tips">
+                            <p><a>版权所有百胜咨询上海有限公司</a></p>
+                            <p><a>沪ICP备05031779号-1</a></p>
+                        </div>
                     </div>
                 </div>
                 <div className="home_footer"><a className="dingcan">立即订餐</a></div>
