@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-import './register.scss'
+import '../login/login.scss'
 import $ from '../../../../node_modules/jquery/dist/jquery.min.js'
 import http from '../../../utils/httpclient'
 
@@ -64,9 +64,7 @@ export default class RegisterComponent extends React.Component{
                 show4: true,
                 content: '密码不一致'
             });
-        }else{
-            console.log(this.refs.phone.value,$('.password')[0].value)
-                 
+        }else{ 
             http.post('register',{username: this.refs.phone.value,password: $('.password')[0].value}).then(res=>{
                 if(res.error){
                     window.alert(res.error);

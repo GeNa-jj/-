@@ -3,9 +3,9 @@ import {Link} from 'react-router'
 import {connect} from 'react-redux'
 
 import './login.scss'
-import $ from '../../../node_modules/jquery/dist/jquery.min.js'
-import LoginErrorComponent from './loginerror/loginerror'
-import SpinnerComponent from '../spinner/SpinnerComponent'
+import $ from '../../../../node_modules/jquery/dist/jquery.min.js'
+import LoginErrorComponent from '../loginerror/loginerror'
+import SpinnerComponent from '../../spinner/SpinnerComponent'
 import * as actions from './loginaction'
 
 class LoginComponent extends React.Component{
@@ -23,8 +23,30 @@ class LoginComponent extends React.Component{
     back(){
         this.props.router.goBack();    
     }
+    componentWillMount(){
+        if(window.sessionStorage.getItem('username')){
+            this.props.router.push('/myCenter');
+        }
+    }
     changepwd(){
-        console.log(this)
+        if(!/^1[34578]\d{9}$/.test(this.refs.phone.value)){
+            this.setState({
+                show1: true
+            })
+            return false
+        }
+        this.props.login({
+            url: 'phone',
+            method: 'post',
+            data: {username: this.refs.phone.value}
+        }).then(res=>{
+            if(!res.status){
+                // message.success('当前用户无法修改密码')
+                // window.alert('当前用户无法修改密码')
+            }else{
+                this.props.router.push({pathname: '/changepwd', query: {phone: this.refs.phone.value}});
+            }
+        })
     }
     seeSec(e){
         $(e.target).toggleClass('icon-biyan').toggleClass('icon-zhengyan');
@@ -65,7 +87,7 @@ class LoginComponent extends React.Component{
                     content: res.message
                 })
             }else{
-                window.sessionStorage.setItem('username',res.data)
+                window.sessionStorage.setItem('username',res.data);
                 this.props.router.push('/');
             }
         }).catch(error => {
