@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-import SpinnerComponent from '../../spinner/SpinnerComponent'
+import SpinnerComponent from '../spinner/SpinnerComponent'
 
 import * as actions from './datagridaction'
 
