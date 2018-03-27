@@ -2,12 +2,6 @@
     display: flex;flex-direction: column;height: 100%;
     .home_body{
         flex: 1;overflow-y: auto;background-color: #f6f6f6;
-        .carousel{
-            background-color: skyblue;
-            height: 2.96rem;
-            overflow:hidden;
-            position:relative;
-        }
         .registerTips{
             height: 1.466667rem;
             background-color:#ccc;

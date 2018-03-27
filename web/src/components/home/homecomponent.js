@@ -1,19 +1,41 @@
 import React from 'react'
+import {Link,History} from 'react-router';
+
 
 import HeaderComponent from '../header/headercomponent'
+import CarouselComponent from '../carousel/carouselcomponent'
+import Jq from '../../../node_modules/jquery-3.2.1.min.js'
+
 import './home.scss'
 
 export default class HomeComponent extends React.Component{
+    componentDidMount(){
+            var mySwiper = new Swiper ('.swiper-container', {
+                 
+                direction: 'horizontal',
+                
+                autoplay:2000,
+                
+                loop: true,
+                pagination: '.swiper-pagination',
+                
+                paginationClickable:true,
+
+                
+                nextButton: '.swiper-button-next',
+                prevButton: '.swiper-button-prev',
+
+                autoplayDisableOnInteraction:false,
+            }) 
+    }
     render(){
         return (
             <div className="home">
                 <HeaderComponent></HeaderComponent>
                 <div className="home_body">
-                    <div className="carousel">
-                        <div className="carousel-box">
-                        </div>
-                    </div>
-                    <div className="registerTips">你好,登录会员中心,享受更多特权</div>
+                <CarouselComponent/>
+
+                <div className="registerTips">你好,登录会员中心,享受更多特权</div>
                     <div className="home_menu-list">
                         <ul>
                             <li><div><img src="src/assets/imgs/1.png" alt="39免外"/></div><div className="info"><span className="text">39免外</span><span></span></div></li>

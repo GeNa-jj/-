@@ -7,6 +7,9 @@ import ListComponent from '../components/list/listcomponent'
 import RegisterComponent from '../components/login/register/registercomponent'
 import ChangepwdComponent from '../components/login/changepassword/changepwdcomponent'
 
+
+
+
 export default class RouterComponent extends React.Component{
     render(){
         return (
@@ -16,6 +19,9 @@ export default class RouterComponent extends React.Component{
                 <Route path="/list" component={ListComponent} />
                 <Route path="/register" component={RegisterComponent} />
                 <Route path="/changepwd" component={ChangepwdComponent} />
+
+        
+
             </Router>
         )
     }
