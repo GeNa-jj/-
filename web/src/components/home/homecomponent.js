@@ -4,6 +4,7 @@ import {Link,History} from 'react-router';
 
 import HeaderComponent from '../header/headercomponent'
 import CarouselComponent from '../carousel/carouselcomponent'
+
 import Jq from '../../../node_modules/jquery/dist/jquery.min.js'
 
 import './home.scss'

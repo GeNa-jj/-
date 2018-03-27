@@ -16,6 +16,9 @@ export default class RouterComponent extends React.Component{
                 <Route path="/list" component={ListComponent} />
                 <Route path="/register" component={RegisterComponent} />
                 <Route path="/changepwd" component={ChangepwdComponent} />
+
+        
+
             </Router>
         )
     }
