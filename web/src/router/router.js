@@ -7,9 +7,6 @@ import ListComponent from '../components/list/listcomponent'
 import RegisterComponent from '../components/mycenter/register/registercomponent'
 import ChangepwdComponent from '../components/mycenter/changepassword/changepwdcomponent'
 
-
-
-
 export default class RouterComponent extends React.Component{
     render(){
         return (
