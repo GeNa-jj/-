@@ -51,6 +51,31 @@ module.exports = {
             }).catch(error=>{
                 res.send(apiResult(false,null,null,error));
             });
-        }); 
+        });
+
+        app.post('/phone',(req, res)=>{
+            let username = req.body.username;
+            var sql = `select * from users where username='${username}';`;
+            db.mysql.login(sql).then(result=>{
+                if(result.length>0){
+                    res.send(apiResult(true));
+                }else{
+                    res.send(apiResult(false));
+                }
+            }).catch(error=>{
+                res.send(apiResult(false,null,null,error));
+            });
+        });
+
+        app.post('/changepwd',(req, res)=>{
+            let username = req.body.username;
+            let password = req.body.password;
+            var sql = `update users set password='${password}' where username='${username}';`;
+            db.mysql.login(sql).then(result=>{
+                res.send(apiResult(true));
+            }).catch(error=>{
+                res.send(apiResult(false,null,null,error));
+            });
+        });
     }
 }

@@ -2,10 +2,10 @@ import React from 'react'
 import {Router, Route, hashHistory} from 'react-router'
 
 import HomeComponent from '../components/home/homecomponent'
-import LoginComponent from '../components/login/logincomponent'
+import LoginComponent from '../components/mycenter/login/logincomponent'
 import ListComponent from '../components/list/listcomponent'
-import RegisterComponent from '../components/login/register/registercomponent'
-import ChangepwdComponent from '../components/login/changepassword/changepwdcomponent'
+import RegisterComponent from '../components/mycenter/register/registercomponent'
+import ChangepwdComponent from '../components/mycenter/changepassword/changepwdcomponent'
 
 
 
