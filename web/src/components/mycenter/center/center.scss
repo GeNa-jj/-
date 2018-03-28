@@ -1,0 +1,60 @@
+.center{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    .bg_img{
+        width: 100%;
+        display: block;
+        vertical-align: top;
+        cursor: pointer;
+    }
+    .user-info{
+        width: 100%;
+        position: absolute;
+        top: 60%;
+        left: 0;
+        transform: translateY(-50%);
+        z-index: 99;
+        color: #fff;
+        .user-head{
+            width: 1.866667rem;
+            height: 1.866667rem;
+            overflow: hidden;
+            float: left;
+            border-radius: 100%;
+            background: #ccc;
+            margin-left: .8rem;
+            img{
+                width: 100%;
+                display: block;
+                vertical-align: top;
+                border-radius: 100%;
+                cursor: pointer;
+            }
+        }
+        .user-name{
+            margin-left: .32rem;
+            float: left;
+            line-height: 1.866667rem;
+            font-weight: 700;
+            font-size: 0.426667rem;
+        }
+        a{
+            float: right;
+            margin-right: .533333rem;
+            line-height: 1.866667rem;
+            display: block;
+            color: #e94f4f;
+            font-size: 0.373333rem;
+            text-decoration: underline;
+            button{
+                width: 2.666667rem;
+                line-height: .64rem;
+                border-radius: .133333rem;
+                color: #999;
+                border: 1px solid #ccc;
+                background-color: #fff;
+            }
+        }
+    }
+}

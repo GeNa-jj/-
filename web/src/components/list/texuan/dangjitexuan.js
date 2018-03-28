@@ -1,8 +1,8 @@
 import React from 'react'
 
 import {connect} from 'react-redux'
-import * as Action from '../../datagrid/datagridaction.js'
-import Modal from '../modal/modalcomponent.js'
+import * as Action from '../../datagrid/datagridaction'
+import Modal from '../modal/modalcomponent'
 
 import Spinner from '../../spinner/SpinnerComponent'
 class Dangjitexuan extends React.Component{
@@ -30,7 +30,7 @@ class Dangjitexuan extends React.Component{
         // console.log(ds);
         let name = this.props.config.name;
         if(name){
-            ds = ds[name] ? ds[name].dataset : []
+            ds = ds[name] ? ds[name].dataset.data : []
             // console.log(ds);
         } else {
             ds = ds.dataset;

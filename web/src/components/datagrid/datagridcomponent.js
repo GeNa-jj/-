@@ -13,7 +13,7 @@ class DatagridComponent extends React.Component{
         
     }
     componentWillMount(){
-        // this.props.refresh(this.props.config)
+        this.props.refresh(this.props.config)
     }
     render(){
         // console.log(this.props)

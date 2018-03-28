@@ -6,6 +6,9 @@ import LoginComponent from '../components/mycenter/login/logincomponent'
 import ListComponent from '../components/list/listcomponent'
 import RegisterComponent from '../components/mycenter/register/registercomponent'
 import ChangepwdComponent from '../components/mycenter/changepassword/changepwdcomponent'
+import CenterComponent from '../components/mycenter/center/centercomponent'
+import DiscountComponent from '../components/home/discount/discountcomponent'
+import MemberInfoComponent from '../components/mycenter/memberinfo/memberinfocomponent'
 
 export default class RouterComponent extends React.Component{
     render(){
@@ -16,7 +19,9 @@ export default class RouterComponent extends React.Component{
                 <Route path="/list" component={ListComponent} />
                 <Route path="/register" component={RegisterComponent} />
                 <Route path="/changepwd" component={ChangepwdComponent} />
-
+                <Route path="/center" component={CenterComponent} />
+                <Route path="/discount" component={DiscountComponent} />
+                <Route path="/memberinfo" component={MemberInfoComponent} />
         
 
             </Router>

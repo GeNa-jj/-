@@ -32,13 +32,23 @@ header{
                     .icon{
                         width: 0.8rem;height: 0.8rem;margin-right: 0.266667rem;background: url(../../assets/imgs/icon.png) no-repeat;background-size: 1.6rem;
                     }
-                    .icon-home{background-position: -0.8rem 0;}
+                    .icon-home{background-position: 0 0;}
                     .icon-menu{background-position: 0 -0.8rem;}
                     .icon-center{background-position: 0 -1.6rem;}
                     .icon-event{background-position: 0 -2.4rem;}
                     .icon-order{background-position: 0 -3.2rem;}
                     .icon-info{background-position: 0 -4rem;}
                     .icon-address{background-position: 0 0;}
+                }
+            }
+            .exit{padding: .266667rem .533333rem;display: none;
+                button{
+                    width: 2.666667rem;
+                    line-height: .64rem;
+                    border-radius: .133333rem;
+                    color: #999;
+                    border: 1px solid #ccc;
+                    background-color: #fff;
                 }
             }
         }

@@ -7,7 +7,7 @@ module.exports={
         app.get('/product',(req,res)=>{
             let page = req.query.page;
             let pageItems = req.query.pageitems;
-            var sql = `select SQL_CALC_FOUND_ROWS * from goodslist`;
+            var sql = `select SQL_CALC_FOUND_ROWS * from product`;
             if(page && pageItems){
                 sql += ` limit ${(page - 1) * pageItems},${pageItems}`;
             }
@@ -17,7 +17,15 @@ module.exports={
             }).catch((error)=>{
                 res.send(error);
             });
-           
+        });
+
+        app.post('/productId', (req, res) => {
+            let id = req.body.id;
+            var sql = `select * from product where id = '${id}'`;
+
+            db.mysql.select(sql).then(data=>{
+                res.send(data);
+            })
         });
     }
 }

@@ -3,12 +3,38 @@
     .home_body{
         flex: 1;overflow-y: auto;background-color: #f6f6f6;
         .registerTips{
+            box-shadow: 0 0.106667rem 0.4rem 0 rgba(255,64,64,.15);
+            background-color: #fff;
+            position: relative;
+            z-index: 1;
             height: 1.466667rem;
-            background-color:#ccc;
             line-height: 1.466667rem;
-            font-size: 0.5rem;
-            font-weight: 600;
-            padding-left: .72rem;
+            a{
+                font-size: .373333rem;
+                margin-right: .053333rem;
+                display: inline-block;
+                max-width: 100%;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                vertical-align: top;
+                white-space: nowrap;
+                color: #333;
+                padding-left: .72rem;
+                font-weight: 600;
+            }
+            .registerTips_r{
+                float: right;
+                color: #888;
+                font-size: .32rem;
+                padding-right: .533333rem;
+                padding-left: 0;
+                display: none;
+                i{    
+                    color: #888;
+                    font-size: .32rem;
+                    padding-left: .266667rem;
+                }
+            }
         }
         .home_menu-list{
             width:100%;
@@ -18,11 +44,12 @@
             ul{
                 display:flex;
                 float:left;
+                padding-right:0.546875rem;
                 li{
+
                     width: 3.52rem;
                     height: 4.853333rem;
                     text-align: center;
-                    background-color: red;
                     margin: .693333rem 0 .613333rem .32rem;
                     overflow: hidden;
                     flex-wrap: nowrap;
@@ -152,13 +179,13 @@
         }
         
     }
-    .home_footer{height: 100px;background-color: #f00;
+    .home_footer{height: 100px;background-color: #ff4040;
         .dingcan{
             font-size:40px;
             color:#fff;
             display:block;
             line-height: 100px;
-            margin-left: 300px;
+            text-align: center;
         }
     }
 }

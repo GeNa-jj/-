@@ -1,0 +1,90 @@
+.discount{
+    display: flex;flex-direction: column;height: 100%;
+    .d_header{
+        min-height: 1.386667rem;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #e1e1e1;
+        background-color: #fff;
+        font-size: .373333rem;
+        .d_header_l{
+            width: 25%;
+            color: #e94f4f;
+            white-space: nowrap;
+            button{
+                width: 1.333333rem;
+                height: 1.333333rem;
+                background-color: transparent;
+                border: 0;
+                color: inherit;
+                line-height: 1;
+                font-size: .56rem;
+                i{
+                    color: #000;
+                    font-size: .48rem;
+                }
+            }  
+        }
+        .d_header_r{
+            width: 50%;
+            // flex: 1;
+            text-align: center;
+            h1{
+                overflow: visible!important;
+                font-weight: 700!important;
+                color: #333;
+                line-height: 1;
+                width: auto;
+                font-size:0.46875rem;
+                // margin-right: 2.109375rem;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+        }
+    }
+    .d_body{
+        flex:1;
+        
+        p{
+            padding: .266667rem .533333rem;
+            background-color: #fff;
+            font-size: 0.421875rem;
+            font-weight: 700;
+        }
+
+        .spa{
+            width: 10%;
+            height: 1px;
+            background-color: #999;
+            margin: 0 auto;
+            overflow: hidden;
+            padding: 0;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .info{
+            padding: .266667rem .533333rem;
+            font-size: 0.34375rem;
+            text-align: left;
+            font-weight: 500;
+            background-color: #fff;
+        }
+    }
+    .d_footer{
+        position: fixed;
+        bottom: 0;
+        height: 1.333333rem;
+        width: 100%;
+        left: 0;
+        a{
+            height: 1.333333rem;
+            line-height: 1.333333rem;
+            text-align: center;
+            margin: 0 auto;
+            font-size: 0.546875rem;
+            color: #fff;
+            background-color: #ff4040;
+            display: block;
+        }
+    }
+}

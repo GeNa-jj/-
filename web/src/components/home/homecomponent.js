@@ -3,40 +3,51 @@ import {Link,History} from 'react-router';
 
 
 import HeaderComponent from '../header/headercomponent'
-import CarouselComponent from '../carousel/carouselcomponent'
-
-import Jq from '../../../node_modules/jquery/dist/jquery.min.js'
+import CarouselComponent from './carousel/carouselcomponent'
 
 import './home.scss'
 
 export default class HomeComponent extends React.Component{
     componentDidMount(){
-            var mySwiper = new Swiper ('.swiper-container', {
-                 
-                direction: 'horizontal',
-                
-                autoplay:2000,
-                
-                loop: true,
-                pagination: '.swiper-pagination',
-                
-                paginationClickable:true,
+        var mySwiper = new Swiper ('.swiper-container', {
+             
+            direction: 'horizontal',
+            
+            autoplay:2000,
+            
+            loop: true,
+            pagination: '.swiper-pagination',
+            
+            paginationClickable:true,
 
-                
-                nextButton: '.swiper-button-next',
-                prevButton: '.swiper-button-prev',
+            
+            // nextButton: '.swiper-button-next',
+            // prevButton: '.swiper-button-prev',
 
-                autoplayDisableOnInteraction:false,
-            }) 
+            autoplayDisableOnInteraction:false,
+        }) 
+
+        if(window.sessionStorage.getItem('username')){
+            $('.registerTips').find('a').eq(0).text(`欢迎您，${window.sessionStorage.getItem('username')}`);
+            $('.registerTips_r').css('display','block');
+            $('.right').html('<a href="#/list">超级套餐</a>');
+        }else{
+            $('.registerTips').find('a').eq(0).text(`你好,登录会员中心,享受更多特权`);
+            $('.registerTips_r').css('display','none');
+            $('.right').html('<a href="#/login">登录享更多优惠</a>');
+        }
     }
     render(){
         return (
             <div className="home">
-                <HeaderComponent></HeaderComponent>
+                <HeaderComponent a={this.props.router} />
                 <div className="home_body">
                 <CarouselComponent/>
 
-                <div className="registerTips">你好,登录会员中心,享受更多特权</div>
+                <div className="registerTips">
+                    <a href="javascript:void(0);">你好,登录会员中心,享受更多特权</a>
+                    <Link to="/center" className="registerTips_r">进入会员中心<i className="iconfont icon-xiangyou"></i></Link>
+                </div>
                     <div className="home_menu-list">
                         <ul>
                             <li><div><img src="src/assets/imgs/1.png" alt="39免外"/></div><div className="info"><span className="text">39免外</span><span></span></div></li>
@@ -45,12 +56,12 @@ export default class HomeComponent extends React.Component{
                             <li><div><img src="src/assets/imgs/index4.jpg" alt="小吃" /></div><div className="info"><span className="text">小吃</span><span></span></div></li>
                             <li><div><img src="src/assets/imgs/index5.jpg" alt="饮料" /></div><div className="info"><span className="text">饮料</span><span></span></div></li>
                             <li><div><img src="src/assets/imgs/index6.jpg" alt="意面" /></div><div className="info"><span className="text">意面</span><span></span></div></li>
-                            <li><div><img src="" alt="" /></div><div><span></span><span></span></div></li>
+                            <li><div><img src="src/assets/imgs/index0.jpg" alt="查看全部菜单" /></div><div><span></span><span></span></div></li>
                         </ul>
                     </div>
                     <div className="home_recommend">
-                        <span className="left"><a>当季特选</a></span>
-                        <span><a>登录享更多优惠</a></span>
+                        <span className="left"><Link to="/list">当季特选</Link></span>
+                        <span className="right"><Link to="/login">登录享更多优惠</Link></span>
                     </div>
                     <div className="home-activity">
                         <h2><span>优惠活动</span></h2>
@@ -73,7 +84,7 @@ export default class HomeComponent extends React.Component{
                         </div>
                     </div>
                 </div>
-                <div className="home_footer"><a className="dingcan">立即订餐</a></div>
+                <div className="home_footer"><Link to="/list" className="dingcan">立即订餐</Link></div>
             </div>
         )
     }

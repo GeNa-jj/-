@@ -3,7 +3,6 @@ import {Link} from 'react-router'
 import {connect} from 'react-redux'
 
 import './login.scss'
-import $ from '../../../../node_modules/jquery/dist/jquery.min.js'
 import LoginErrorComponent from '../loginerror/loginerror'
 import SpinnerComponent from '../../spinner/SpinnerComponent'
 import * as actions from './loginaction'

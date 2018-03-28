@@ -1,9 +1,8 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-import '../login/login.scss'
-import $ from '../../../../node_modules/jquery/dist/jquery.min.js'
 import http from '../../../utils/httpclient'
+import '../login/login.scss'
 
 import LoginErrorComponent from '../loginerror/loginerror'
 import SpinnerComponent from '../../spinner/SpinnerComponent'

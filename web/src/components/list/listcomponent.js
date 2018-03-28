@@ -1,5 +1,6 @@
 import React from 'react'
 import HeaderComponent from '../header/headercomponent.js'
+import CarouselComponent from '../home/carousel/carouselcomponent'
 
 import './listcomponent.scss'
 
@@ -9,6 +10,25 @@ import './texuan/dangjitexuan.scss'
 import Footer from './footer/footer.js'
 
 export default class ListComponent extends React.Component{
+    componentDidMount(){
+            var mySwiper = new Swiper ('.swiper-container', {
+                 
+                direction: 'horizontal',
+                
+                autoplay:2000,
+                
+                loop: true,
+                pagination: '.swiper-pagination',
+                
+                paginationClickable:true,
+
+                
+                // nextButton: '.swiper-button-next',
+                // prevButton: '.swiper-button-prev',
+
+                autoplayDisableOnInteraction:false,
+            }) 
+    }
     state = {
         show:false
     }
@@ -18,14 +38,14 @@ export default class ListComponent extends React.Component{
         })
     }
     render(){
-        console.log(this.props);
+        // console.log(this.props);
         return (
             <div id="list">
                 <div className="head">
-                    <HeaderComponent/>
+                    <HeaderComponent a={this.props.router}/>
                 </div>
                 <div className="main">
-                    <div className="banner"></div>
+                    <CarouselComponent/>
                     <div className="mainTop">
                         <ul className="mainLeft">
                             <li>
@@ -44,7 +64,7 @@ export default class ListComponent extends React.Component{
                                 <p>意面</p>
                             </li>
                             <li>
-                                <i className="iconfont icon-icon-test"></i>
+                                <i className="iconfont icon-mifan"></i>
                                 <p>饭食</p>
                             </li>
                             <li>
@@ -56,7 +76,7 @@ export default class ListComponent extends React.Component{
                                 <p>汤</p>
                             </li>
                             <li>
-                                <i className="iconfont icon-yinliao01"></i>
+                                <i className="iconfont icon-yinliao"></i>
                                 <p>饮料</p>
                             </li>
                         </ul>
