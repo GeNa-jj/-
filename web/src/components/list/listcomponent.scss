@@ -12,6 +12,11 @@ body,html,#app{
     .main{
         flex:1;
         overflow-x:hidden;
+
+        .banner{
+            height:2.946667rem;
+            background:green;
+        }
         .mainTop{    
             flex: 1;
             display: flex;

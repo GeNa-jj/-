@@ -2,7 +2,7 @@ import React from 'react'
 
 import {connect} from 'react-redux'
 import * as Action from '../../datagrid/datagridaction'
-import Modal from '../modal/modalcomponent'
+import Modal from '../modal/modalcomponent.js'
 
 import Spinner from '../../spinner/SpinnerComponent'
 class Dangjitexuan extends React.Component{
@@ -17,7 +17,8 @@ class Dangjitexuan extends React.Component{
         this.setState({
             show:true,
             id:id
-        })
+        });
+        this.props.getId(id)
     }
     hidden(){
         this.setState({

@@ -9,11 +9,9 @@ class ModalComponent extends Component{
             let html = (
             <div className="Marco-modal">
                 <div className="Marco-modalBody">
-                    
                     <div className="Marco-modalMain">
                        <Datagrid id={this.props.id} hidden={this.props.hidden} showup={this.props.showup}/> 
                     </div>
-                    
                 </div>
                 <div className="Marco-modalShade"></div>
             </div>

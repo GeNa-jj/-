@@ -1,51 +1,56 @@
 import React from 'react'
 import HeaderComponent from '../header/headercomponent.js'
-import CarouselComponent from '../home/carousel/carouselcomponent'
 
 import './listcomponent.scss'
 
 import Dangjitexuan from './texuan/dangjitexuan.js'
+import CarouselComponent from '../home/carousel/carouselcomponent'
 import './texuan/dangjitexuan.scss'
 
 import Footer from './footer/footer.js'
 
 export default class ListComponent extends React.Component{
     componentDidMount(){
-            var mySwiper = new Swiper ('.swiper-container', {
-                 
-                direction: 'horizontal',
-                
-                autoplay:2000,
-                
-                loop: true,
-                pagination: '.swiper-pagination',
-                
-                paginationClickable:true,
+        var mySwiper = new Swiper ('.swiper-container', {
+             
+            direction: 'horizontal',
+            
+            autoplay:2000,
+            
+            loop: true,
+            pagination: '.swiper-pagination',
+            
+            paginationClickable:true,
 
-                
-                // nextButton: '.swiper-button-next',
-                // prevButton: '.swiper-button-prev',
+            
+            // nextButton: '.swiper-button-next',
+            // prevButton: '.swiper-button-prev',
 
-                autoplayDisableOnInteraction:false,
-            }) 
-    }
+            autoplayDisableOnInteraction:false,
+        })
+    } 
     state = {
-        show:false
+        show:false,
+        id:null
     }
     showup(){
         this.setState({
             show:true
         })
     }
+    getId(id){
+        this.setState({
+            id:id
+        })
+    }
     render(){
-        // console.log(this.props);
         return (
             <div id="list">
                 <div className="head">
                     <HeaderComponent a={this.props.router}/>
                 </div>
                 <div className="main">
-                    <CarouselComponent/>
+                    <CarouselComponent />
                     <div className="mainTop">
                         <ul className="mainLeft">
                             <li>
@@ -64,7 +69,7 @@ export default class ListComponent extends React.Component{
                                 <p>意面</p>
                             </li>
                             <li>
-                                <i className="iconfont icon-mifan"></i>
+                                <i className="iconfont icon-icon-test"></i>
                                 <p>饭食</p>
                             </li>
                             <li>
@@ -76,12 +81,12 @@ export default class ListComponent extends React.Component{
                                 <p>汤</p>
                             </li>
                             <li>
-                                <i className="iconfont icon-yinliao"></i>
+                                <i className="iconfont icon-yinliao01"></i>
                                 <p>饮料</p>
                             </li>
                         </ul>
                         <section className="mainRight">
-                            <Dangjitexuan config={{url:'product',name:"listproduct"}} showup={this.showup.bind(this)}/>
+                            <Dangjitexuan config={{url:'product',name:"listproduct"}} showup={this.showup.bind(this)} getId={this.getId.bind(this)}/>
                             <div className="mainFoot">
                                 <div className="title">友情提示</div>
                                 <p>
@@ -92,7 +97,7 @@ export default class ListComponent extends React.Component{
                         </section>
                     </div>
                 </div>
-                <Footer show={this.state.show}/>
+                <Footer show={this.state.show} id={this.state.id} />
             </div>
         )
     }

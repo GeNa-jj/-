@@ -9,3 +9,10 @@ export function refresh(_config){
         name: _config.name
     }
 }
+
+export function tocar(id){
+    return {
+        type:'tocar',
+        id:id
+    }
+}

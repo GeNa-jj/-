@@ -32,7 +32,10 @@ export default function datagrid(state = {}, action){
         case constants.RequestError:
             _state.show =false;
             _state.error = action.error;
-            break
+            break;
+        case 'tocar':
+            _state = action.id;
+            break;
     }
     return _state;
 }
