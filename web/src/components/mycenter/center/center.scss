@@ -1,7 +1,8 @@
 .center{
     width: 100%;
-    overflow: hidden;
     position: relative;
+    display: flex;
+    flex-direction: column;
     .bg_img{
         width: 100%;
         display: block;
@@ -11,7 +12,7 @@
     .user-info{
         width: 100%;
         position: absolute;
-        top: 60%;
+        top: 50%;
         left: 0;
         transform: translateY(-50%);
         z-index: 99;
@@ -55,6 +56,32 @@
                 border: 1px solid #ccc;
                 background-color: #fff;
             }
+        }
+    }
+    .member-nav{
+        flex: 1;
+        overflow: hidden;
+        width: 100%;
+        height: 1.6rem;
+        line-height: 1.6rem;
+        position: relative;
+        display: block;
+        color: #3f3f3f;
+        border-bottom: 0.026667rem solid #e5e5e5;
+        background-color: #fff;
+        padding: 0 .533333rem 0 .4rem;
+        .nav-left{
+            float: left;
+            font-size: .4rem;
+            padding-left: .133333rem;
+        }
+        .nav-right{
+            padding-right: .533333rem;
+            color: #999696;
+            float: right;
+            font-size: .346667rem;
+            background: url(../../../assets/imgs/xiangyou.png) 100% no-repeat;
+            background-size: auto .373333rem;
         }
     }
 }

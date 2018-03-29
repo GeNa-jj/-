@@ -22,9 +22,16 @@ class DatagridComponent extends React.Component{
         this.props.hidden()
           
     }
-    getShowUp(){
+    getShowUp(id){ 
          this.props.showup();
          this.props.hidden();
+         this.props.getId(id)
+    }
+    componentDidUpdate(){
+        if($('.datarigTop').find('span').text()==''){
+            $('.datarigTop').find('span').css('display','none');
+        }
+        
     }
     render(){
         // console.log(this.props)
@@ -45,7 +52,7 @@ class DatagridComponent extends React.Component{
                                     </p>
                                     <div className="datarigFoot">
                                         <span>￥{item.price} 起/{item.pro}</span>
-                                        <div onClick={this.getShowUp.bind(this)}>订购</div>
+                                        <div onClick={this.getShowUp.bind(this,item.id)}>订购</div>
                                     </div>
                                 </div>
                             )

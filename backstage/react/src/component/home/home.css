@@ -1,0 +1,15 @@
+.dymain{width: 100%;height: 100%;}
+.dymain .mainheader{ position:fixed;top:0;height: 45px;left:0;right:0;padding-top:20px;background:rgba(0, 0, 255, 0.09);}
+button{border-radius:2px;}
+.dymain .dynav{position:fixed;top:65px;width: 15%;left:0px;bottom:0;background:rgba(0, 0, 255, 0.09);}
+.dymain .dymains{
+    position:fixed;top:65px;bottom:0;width: 85%;right:0;
+}
+ul,li{list-style-type:none;}
+.dymain,.dynav,.dymains{border:1px solid #ccc;}
+.dymain .dynav ul{padding-left:30px;}
+.dymain .dynav ul li{font-size:25px;overflow:hidden;height: 34px;}
+.dymain .dynav ul li.active{font-size:25px;overflow:hidden;height:auto;color:blue;}
+.dymain .dynav ul li.active h5{color:black;}
+h4{margin-bottom:0px;}
+table  tr:hover{background: #ccc;}

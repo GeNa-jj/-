@@ -1,0 +1,52 @@
+.card{
+     display: flex;flex-direction: column;height: 100%;
+     .d_header{
+        min-height: 1.386667rem;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #e1e1e1;
+        background-color: #fff;
+        font-size: .373333rem;
+        .d_header_l{
+            width: 25%;
+            color: #e94f4f;
+            white-space: nowrap;
+            button{
+                width: 1.333333rem;
+                height: 1.333333rem;
+                background-color: transparent;
+                border: 0;
+                color: inherit;
+                line-height: 1;
+                font-size: .56rem;
+                i{
+                    color: #000;
+                    font-size: 0.78125rem;
+                }
+            }  
+        }
+        .d_header_r{
+            width: 50%;
+            // flex: 1;
+            text-align: center;
+            h1{
+                overflow: visible!important;
+                font-weight: 700!important;
+                color: #333;
+                line-height: 1;
+                width: auto;
+                font-size:0.40625rem;
+                // margin-right: 2.109375rem;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+        }
+    }
+    .body{
+        flex: 1;
+        line-height: 16.373333rem;
+        text-align: center;
+        font-size: 60px;
+        overflow: auto;
+    }
+}

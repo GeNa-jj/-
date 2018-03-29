@@ -11,20 +11,21 @@ export default function(api){
             }
 
             dispatch({type: types[0] || type});
-
-            return new Promise((resolve, reject) => {
-                http[method](url, data).then(res => {
-                    dispatch({
-                        type: types[1] || type,
-                        name,
-                        result: res
+            if(url){
+                return new Promise((resolve, reject) => {
+                    http[method](url, data).then(res => {
+                        dispatch({
+                            type: types[1] || type,
+                            name,
+                            result: res
+                        });
+                        resolve(res);
+                    }).catch(error => {
+                        dispatch({type: types[2] || type});
+                        reject(error);
                     });
-                    resolve(res);
-                }).catch(error => {
-                    dispatch({type: types[2] || type});
-                    reject(error);
-                });
-            });
+                });   
+            } 
         }
     }
 }

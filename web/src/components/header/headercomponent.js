@@ -82,11 +82,15 @@ export default class HeaderComponent extends React.Component{
     tomemberinfo(){
         $('.mycenter_list').animate({left: '-6rem'}).hide(100);
         $('.cover').animate({opacity: '0'}).hide(100,()=>{
-            if(this.props.a.location.pathname=='/memberinfo'){
-                return false;
+            if(window.sessionStorage.getItem('username')){
+                if(this.props.a.location.pathname=='/memberinfo'){
+                    return false;
+                }else{
+                    this.props.a.push('/memberinfo');
+                }  
             }else{
-                this.props.a.push('/memberinfo');
-            }  
+                this.props.a.push('/login');
+            }
         }); 
     }
     render(){
@@ -100,7 +104,7 @@ export default class HeaderComponent extends React.Component{
                     <span>龙门客栈</span>
                 </div>
                 <div className="header_r">
-                    <a href="javascript:void(0);">我的卡卷</a>
+                    <Link to="/car">我的卡卷</Link>
                 </div>
                 <div className="mycenter_list">
                     <div className="avatar">

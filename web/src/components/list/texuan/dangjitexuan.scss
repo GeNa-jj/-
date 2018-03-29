@@ -19,6 +19,10 @@ dl{
         position: relative;
         align-items: center;
         overflow: hidden;
+        img{
+            width:100%;
+            height:100%;
+        }
         .dataTitle{
             position: absolute;
             right: 0;
@@ -38,6 +42,9 @@ dl{
                 white-space:nowrap;
                 color: #fff;
                 min-width: 4rem;
+            }
+            p{
+                color: #fff;
             }
             button{
                 font-size: .32rem;

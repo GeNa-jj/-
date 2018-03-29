@@ -9,6 +9,10 @@ import ChangepwdComponent from '../components/mycenter/changepassword/changepwdc
 import CenterComponent from '../components/mycenter/center/centercomponent'
 import DiscountComponent from '../components/home/discount/discountcomponent'
 import MemberInfoComponent from '../components/mycenter/memberinfo/memberinfocomponent'
+import DingdanComponent from '../components/list/dingdan/dingdan'
+import CarComponent from '../components/header/card/cardcomponent'
+
+
 
 export default class RouterComponent extends React.Component{
     render(){
@@ -22,8 +26,11 @@ export default class RouterComponent extends React.Component{
                 <Route path="/center" component={CenterComponent} />
                 <Route path="/discount" component={DiscountComponent} />
                 <Route path="/memberinfo" component={MemberInfoComponent} />
+                <Route path="/dingdan" component={DingdanComponent} />
+                <Route path="/car" component={CarComponent} />
         
-
+    
+                
             </Router>
         )
     }

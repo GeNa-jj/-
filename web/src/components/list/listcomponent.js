@@ -27,7 +27,17 @@ export default class ListComponent extends React.Component{
             // prevButton: '.swiper-button-prev',
 
             autoplayDisableOnInteraction:false,
-        })
+        });
+
+        $('.mainLeft').on('click','li',function(){
+            $(this).css('color','red');
+            $(this).siblings('li').css('color','');
+
+            var index=$(this).index();
+            $("#dangji dl").eq(index).show().siblings().hide();
+
+        });
+        $('li').eq(7).css('color','red');
     } 
     state = {
         show:false,
@@ -43,7 +53,7 @@ export default class ListComponent extends React.Component{
             id:id
         })
     }
-    render(){
+    render(){      
         return (
             <div id="list">
                 <div className="head">
@@ -58,9 +68,6 @@ export default class ListComponent extends React.Component{
                                 <p>当季特选</p>
                             </li>
                             <li>
-                                <p>超级套餐</p>
-                            </li>
-                            <li>
                                 <i className="iconfont icon-pisa"></i>
                                 <p>披萨</p>
                             </li>
@@ -69,7 +76,7 @@ export default class ListComponent extends React.Component{
                                 <p>意面</p>
                             </li>
                             <li>
-                                <i className="iconfont icon-icon-test"></i>
+                                <i className="iconfont icon-mifan"></i>
                                 <p>饭食</p>
                             </li>
                             <li>
@@ -78,10 +85,10 @@ export default class ListComponent extends React.Component{
                             </li>
                             <li>
                                 <i className="iconfont icon-tangcai"></i>
-                                <p>汤</p>
+                                <p>甜点</p>
                             </li>
                             <li>
-                                <i className="iconfont icon-yinliao01"></i>
+                                <i className="iconfont icon-yinliao"></i>
                                 <p>饮料</p>
                             </li>
                         </ul>
@@ -97,7 +104,7 @@ export default class ListComponent extends React.Component{
                         </section>
                     </div>
                 </div>
-                <Footer show={this.state.show} id={this.state.id} />
+                <Footer a={this.props.router} show={this.state.show} id={this.state.id}/>
             </div>
         )
     }

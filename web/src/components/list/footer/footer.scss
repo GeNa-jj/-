@@ -38,6 +38,7 @@
                         flex: 1;
                         color: #666;
                         font-size: .373333rem;
+                        padding-left: .4rem;
                     }
                     .footerclearCar{
                         font-size: .373333rem;
@@ -52,9 +53,10 @@
                 overflow-y: scroll;
                 background-color: #fff;
                 ul{
-                    height: 100%;
+                    height: 4.133333rem;
                     font-size: .373333rem;
                     padding-bottom: .266667rem;
+                    overflow: auto;
                     li:first-of-type{
                         border-bottom: 1px solid #dbdbdb;
                         text-align: left;
@@ -73,7 +75,7 @@
                             i{
                                 width:0.533333rem;
                                 height:0.533333rem;
-                                background-color:red;
+                                background-color:#e94f4f;
                                 border-radius:0.533333rem;
                                 margin-left:0.133333rem;
                                 margin-right:0.133333rem;
@@ -81,10 +83,11 @@
                                 font-size:0.4rem;
                                 text-align:center;
                                 line-height:0.533333rem;
+                                font-style:normal;
                             }
                             .footerName{
                                 float:left;
-                                width: 50%;
+                                flex: 1;
                                 min-height: .666667rem;
                                 overflow: hidden;
                                 color: #474747;
@@ -94,12 +97,13 @@
                                 color: #474747;
                             }
                             .shuliang{
+                                margin-right: 0.266667rem;
                                 .jian,.jia{
                                     float:left;
                                     display:block;
                                     width:0.633333rem;
                                     height:0.633333rem;
-                                    border:3px solid red;
+                                    border:3px solid #e94f4f;
                                     margin-left:0.266667rem;
                                     border-radius:0.633333rem;
                                     text-align:center;
@@ -174,8 +178,10 @@
             background-color: #ff4747;
             color: #fff;
             text-align: center;
+            a{color: #fff;display: block;}
         }
 
     }
 
 }
+.modalShade{position: fixed; top:1.173333rem; right: 0; bottom: 0; left: 0; background-color: #000; opacity: .3; z-index: 99;height:0rem;}

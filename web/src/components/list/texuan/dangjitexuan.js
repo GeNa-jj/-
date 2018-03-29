@@ -18,7 +18,6 @@ class Dangjitexuan extends React.Component{
             show:true,
             id:id
         });
-        this.props.getId(id)
     }
     hidden(){
         this.setState({
@@ -36,16 +35,41 @@ class Dangjitexuan extends React.Component{
         } else {
             ds = ds.dataset;
         }
+        let dangjitexuan = [];
+        let pisa = [];
+        let yimian = [];
+        let fanshi = [];
+        let xiaochi = [];
+        let tiandian = [];
+        let drinks = [];
+        ds.map((item)=>{  
+            if(item.genre=='当季精选'){
+                dangjitexuan.push(item);
+            }else if(item.genre == '比萨'){
+                pisa.push(item);
+            }else if(item.genre =='意面'){
+                yimian.push(item);
+            }else if(item.genre=='饭食'){
+                fanshi.push(item);
+            }else if(item.genre=='小吃'){
+                xiaochi.push(item);
+            }else if(item.genre=='甜点'){
+                tiandian.push(item);
+            }else if(item.genre=='饮料'){
+                drinks.push(item);
+            }
+        })
         return(
-            <div>
+            <div id="dangji">
                 <dl>
                     <dt>当季特选</dt>
                     {
-                        ds.map((item) => {
+                        dangjitexuan.map((item) => {
                             return <dd key={item.id} onClick={this.showup.bind(this,item.id)}>
                                         <img src={"src/assets/imgs/"+item.img}/>
                                         <div className="dataTitle">
-                                            <h3>{item.pro}</h3>
+                                            <h3>{item.name}</h3>
+                                            <p>{item.exp}</p>
                                             <button>订购</button>
                                         </div>
                                 </dd>
@@ -53,7 +77,103 @@ class Dangjitexuan extends React.Component{
                         })
                     }
                 </dl>
-                <Modal show={this.state.show} id={this.state.id} hidden={this.hidden.bind(this)} showup={this.props.showup}/>
+                <dl>
+                <dt>披萨</dt>
+                    {
+                        pisa.map((item) => {
+                            return <dd key={item.id} onClick={this.showup.bind(this,item.id)}>
+                                        <img src={"src/assets/imgs/"+item.img}/>
+                                        <div className="dataTitle">
+                                            <h3>{item.name}</h3>
+                                            <p>{item.exp}</p>
+                                            <button>订购</button>
+                                        </div>
+                                </dd>
+
+                        })
+                    }
+                </dl>
+                <dl>
+                    <dt>意面</dt>
+                    {
+                        yimian.map((item) => {
+                            return <dd key={item.id} onClick={this.showup.bind(this,item.id)}>
+                                        <img src={"src/assets/imgs/"+item.img}/>
+                                        <div className="dataTitle">
+                                            <h3>{item.name}</h3>
+                                            <p>{item.exp}</p>
+                                            <button>订购</button>
+                                        </div>
+                                </dd>
+
+                        })
+                    }
+                </dl>
+                <dl>
+                    <dt>饭食</dt>
+                    {
+                        fanshi.map((item) => {
+                            return <dd key={item.id} onClick={this.showup.bind(this,item.id)}>
+                                        <img src={"src/assets/imgs/"+item.img}/>
+                                        <div className="dataTitle">
+                                            <h3>{item.name}</h3>
+                                            <p>{item.exp}</p>
+                                            <button>订购</button>
+                                        </div>
+                                </dd>
+
+                        })
+                    }
+                </dl>
+                <dl>
+                    <dt>小吃</dt>
+                    {
+                        xiaochi.map((item) => {
+                            return <dd key={item.id} onClick={this.showup.bind(this,item.id)}>
+                                        <img src={"src/assets/imgs/"+item.img}/>
+                                        <div className="dataTitle">
+                                            <h3>{item.name}</h3>
+                                            <p>{item.exp}</p>
+                                            <button>订购</button>
+                                        </div>
+                                </dd>
+
+                        })
+                    }
+                </dl>
+                <dl>
+                    <dt>甜点</dt>
+                    {
+                        tiandian.map((item) => {
+                            return <dd key={item.id} onClick={this.showup.bind(this,item.id)}>
+                                        <img src={"src/assets/imgs/"+item.img}/>
+                                        <div className="dataTitle">
+                                            <h3>{item.name}</h3>
+                                            <p>{item.exp}</p>
+                                            <button>订购</button>
+                                        </div>
+                                </dd>
+
+                        })
+                    }
+                </dl>
+                <dl>
+                    <dt>饮料</dt>
+                    {
+                        drinks.map((item) => {
+                            return <dd key={item.id} onClick={this.showup.bind(this,item.id)}>
+                                        <img src={"src/assets/imgs/"+item.img}/>
+                                        <div className="dataTitle">
+                                            <h3>{item.name}</h3>
+                                            <p>{item.exp}</p>
+                                            <button>订购</button>
+                                        </div>
+                                </dd>
+
+                        })
+                    }
+                </dl>
+                <Modal show={this.state.show} getId={this.props.getId} id={this.state.id} hidden={this.hidden.bind(this)} showup={this.props.showup}/>
                 <Spinner show={this.props.show}/>
             </div>
             )

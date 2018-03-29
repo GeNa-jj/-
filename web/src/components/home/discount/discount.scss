@@ -44,7 +44,9 @@
     }
     .d_body{
         flex:1;
-        
+        img{
+            width: 100%;
+        }
         p{
             padding: .266667rem .533333rem;
             background-color: #fff;

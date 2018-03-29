@@ -10,7 +10,7 @@ class ModalComponent extends Component{
             <div className="Marco-modal">
                 <div className="Marco-modalBody">
                     <div className="Marco-modalMain">
-                       <Datagrid id={this.props.id} hidden={this.props.hidden} showup={this.props.showup}/> 
+                       <Datagrid id={this.props.id} getId={this.props.getId} hidden={this.props.hidden} showup={this.props.showup}/> 
                     </div>
                 </div>
                 <div className="Marco-modalShade"></div>

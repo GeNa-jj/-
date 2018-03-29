@@ -50,13 +50,13 @@ export default class HomeComponent extends React.Component{
                 </div>
                     <div className="home_menu-list">
                         <ul>
-                            <li><div><img src="src/assets/imgs/1.png" alt="39免外"/></div><div className="info"><span className="text">39免外</span><span></span></div></li>
-                            <li><div><img src="src/assets/imgs/index2.jpg" alt="聚乐盒" /></div><div className="info"><span className="text">聚乐盒</span><span></span></div></li>
-                            <li><div><img src="src/assets/imgs/index3.jpg" alt="披萨" /></div><div className="info"><span className="text">披萨</span><span></span></div></li>
-                            <li><div><img src="src/assets/imgs/index4.jpg" alt="小吃" /></div><div className="info"><span className="text">小吃</span><span></span></div></li>
-                            <li><div><img src="src/assets/imgs/index5.jpg" alt="饮料" /></div><div className="info"><span className="text">饮料</span><span></span></div></li>
-                            <li><div><img src="src/assets/imgs/index6.jpg" alt="意面" /></div><div className="info"><span className="text">意面</span><span></span></div></li>
-                            <li><div><img src="src/assets/imgs/index0.jpg" alt="查看全部菜单" /></div><div><span></span><span></span></div></li>
+                            <li><Link to="/list"><img src="src/assets/imgs/1.png" alt="39免外"/></Link><Link className="info"><span className="text">39免外</span><span></span></Link></li>
+                            <li><Link to="/list"><img src="src/assets/imgs/index2.jpg" alt="聚乐盒" /></Link><Link className="info"><span className="text">聚乐盒</span><span></span></Link></li>
+                            <li><Link to="/list"><img src="src/assets/imgs/index3.jpg" alt="披萨" /></Link><Link className="info"><span className="text">披萨</span><span></span></Link></li>
+                            <li><Link to="/list"><img src="src/assets/imgs/index4.jpg" alt="小吃" /></Link><Link className="info"><span className="text">小吃</span><span></span></Link></li>
+                            <li><Link to="/list"><img src="src/assets/imgs/index5.jpg" alt="饮料" /></Link><Link className="info"><span className="text">饮料</span><span></span></Link></li>
+                            <li><Link to="/list"><img src="src/assets/imgs/index6.jpg" alt="意面" /></Link><Link className="info"><span className="text">意面</span><span></span></Link></li>
+                            <li><Link to="/list"><img src="src/assets/imgs/index0.jpg" alt="查看全部菜单" /></Link></li>
                         </ul>
                     </div>
                     <div className="home_recommend">

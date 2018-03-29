@@ -1,3 +1,69 @@
 .memberinfo{
-    .body{}
+    .body{
+        flex:1;
+        background-color: #f0f0f0;
+        height: 100%;
+        overflow-y: auto;
+        padding-top: .266667rem;
+        padding-bottom: 1.333333rem;
+        .message_body_t{
+            margin-bottom: .4rem;
+            border-top: 1px solid #d5d5d5;
+            ul{background-color:#fff; 
+                li{
+                    border-bottom: 1px solid #d5d5d5;
+                    display:flex;
+                    justify-content:space-between;
+                    .bbox{
+                        height: 1.6rem;
+                        line-height: 1.6rem;
+                        display:flex;
+                        font-size:0.46875rem;
+                        i{
+                            font-size:0.703125rem;
+                            margin-left:0.3125rem;
+                            margin-right:0.390625rem;
+                        }
+                    }
+                    .sbox{display:flex;
+                         height: 1.6rem;
+                        line-height: 1.6rem;
+                        i{
+                            font-size:0.703125rem;
+                            // margin-left:0.3125rem;
+                            margin-right:0.390625rem;
+                        }
+                    }
+                    .zhenname{
+                        height: 1.6rem;
+                        line-height: 1.6rem;
+                        font-size:0.46875rem;
+                         margin-right:0.46875rem;
+                    }
+                    .zhenname1{
+                        height: 1.6rem;
+                        line-height: 1.6rem;
+                        font-size:0.46875rem;
+                    }
+                }
+            }
+        }
+    }
+    .footer{
+        position: fixed;
+        bottom: 0;
+        height: 1.333333rem;
+        width: 100%;
+        left: 0;
+        a{
+            height: 1.333333rem;
+            line-height: 1.333333rem;
+            text-align: center;
+            margin: 0 auto;
+            font-size: 0.426667rem;
+            color: #fff;
+            background-color: #ec4c33;
+            display: block;
+        }
+    }
 }
