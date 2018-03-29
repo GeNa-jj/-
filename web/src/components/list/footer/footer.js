@@ -7,27 +7,30 @@ import './footer.scss'
 
 export default class Footer extends React.Component{
     componentWillReceiveProps(newProps){
-        http.post('productId',{id:newProps.id}).then((res)=>{
-            if(res[0]){
-                var arr = this.state.dataset
-                for(var i=0;i<arr.length;i++){
-                    if(res[0].id==arr[i].id){
-                        arr[i].n++;
-                        this.setState({
-                            dataset:this.state.dataset
-                        }) 
-                        return
+        if(!window.sessionStorage.getItem('username')){
+            this.props.a.push('/login');
+        }else{
+            http.post('productId',{id:newProps.id}).then((res)=>{
+                if(res[0]){
+                    var arr = this.state.dataset
+                    for(var i=0;i<arr.length;i++){
+                        if(res[0].id==arr[i].id){
+                            arr[i].n++;
+                            this.setState({
+                                dataset:this.state.dataset
+                            }) 
+                            return
+                        }
+                        
                     }
-                    
-                }
-                res[0].n = 1;
-                arr.push(res[0]);
-                this.setState({
-                    dataset:arr
-                })       
-            }
-                 
-        })
+                    res[0].n = 1;
+                    arr.push(res[0]);
+                    this.setState({
+                        dataset:arr
+                    })       
+                }      
+            });     
+        }
     }
     state = {
         i:0,

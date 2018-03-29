@@ -23,10 +23,10 @@ export default class dingdanComponent extends React.Component{
         http.post('order',order).then(res=>{
               if(res.status){
                     window.alert('下单成功');
+                    this.props.a.push('/');
               }else{
                     window.alert('下单失败');
               }
-              this.props.a.push('/');
         }).catch(error=>{
               window.alert(error);
         });                 
