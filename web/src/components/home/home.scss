@@ -118,7 +118,7 @@
             }
             .home-activity-item{
                 text-align: left;
-                border-bottom: 1px solid #ececec;
+                border-bottom: 0.026667rem solid #ececec;
                 a{
                     p{
                         width: 100%;
@@ -179,12 +179,12 @@
         }
         
     }
-    .home_footer{height: 100px;background-color: #ff4040;
+    .home_footer{height: 1.333333rem;background-color: #ff4040;
         .dingcan{
-            font-size:40px;
+            font-size:0.48rem;
             color:#fff;
             display:block;
-            line-height: 100px;
+            line-height: 1.333333rem;
             text-align: center;
         }
     }

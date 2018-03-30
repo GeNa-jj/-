@@ -12,7 +12,7 @@ export default class CardComponent extends React.Component{
                     <button><Link to="/"><i className="iconfont icon-xiangzuo"></i></Link></button>
                     </div>
                     <div className="d_header_r">
-                        <h1>我的卡卷</h1>
+                        <h1>我的卡券</h1>
                     </div>
                 </div>
                 <div className="body">

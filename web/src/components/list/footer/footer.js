@@ -131,7 +131,7 @@ export default class Footer extends React.Component{
     }
     topay(){
         var items = this.state.dataset;
-        window.sessionStorage.removeItem('items');
+        // window.sessionStorage.removeItem('items');
         window.sessionStorage.setItem('items',JSON.stringify(items)); 
         if(this.state.dataset==''){
             window.alert('购物车为空');

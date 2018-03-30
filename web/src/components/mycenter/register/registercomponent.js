@@ -67,12 +67,11 @@ export default class RegisterComponent extends React.Component{
             http.post('register',{username: this.refs.phone.value,password: $('.password')[0].value}).then(res=>{
                 if(res.error){
                     window.alert(res.error);
-                }else if(res.message){
+                }else if(res.message){ 
                     this.setState({
                         show1: true,
                         content: res.message
                     });
-                    this.refs.phone.focus();
                 }else{
                     window.alert('欢迎加入龙门客栈');
                     this.props.router.push('/login');

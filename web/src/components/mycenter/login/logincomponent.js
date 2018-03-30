@@ -40,8 +40,7 @@ class LoginComponent extends React.Component{
             data: {username: this.refs.phone.value}
         }).then(res=>{
             if(!res.status){
-                // message.success('当前用户无法修改密码')
-                // window.alert('当前用户无法修改密码')
+                window.alert('当前用户无法修改密码')
             }else{
                 this.props.router.push({pathname: '/changepwd', query: {phone: this.refs.phone.value}});
             }

@@ -19,5 +19,16 @@ module.exports = {
                 res.send(apiResult(false,null,null,error));
             });
         });
+
+        app.get('/getorder',(req,res)=>{
+            let username = req.query.username;
+            
+            var sql = `select * from orders where username = '${username}'`;
+            db.mysql.insert(sql).then(data=>{
+                res.send(apiResult(true,data))
+            }).catch(error=>{
+                res.send(apiResult(false,null,null,error));
+            });
+        });
     }
 }
