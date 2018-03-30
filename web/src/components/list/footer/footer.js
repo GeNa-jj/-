@@ -192,7 +192,7 @@ export default class Footer extends React.Component{
                             <div className="footerline">
                                 <div className="total">
                                     <span>￥<span ref="price">0</span>元</span>
-                                    <p>含9.0元外送费</p>
+                                    <p style={{marginLeft: '0.066667rem'}}>含9.0元外送费</p>
                                 </div>
                             </div>
                             <div className="footerRight"><a onClick={this.topay.bind(this)}>去结算</a></div>

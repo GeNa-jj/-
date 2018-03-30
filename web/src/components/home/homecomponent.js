@@ -28,7 +28,7 @@ export default class HomeComponent extends React.Component{
         }) 
 
         if(window.sessionStorage.getItem('username')){
-            $('.registerTips').find('a').eq(0).text(`欢迎您，${window.sessionStorage.getItem('username')}`);
+            $('.registerTips').find('a').eq(0).text(`欢迎您，${window.sessionStorage.getItem('nicheng')}`);
             $('.registerTips_r').css('display','block');
             $('.right').html('<a href="#/list">超级套餐</a>');
         }else{
@@ -74,13 +74,13 @@ export default class HomeComponent extends React.Component{
                     </div>
                     <div className="home-wei">
                         <div>
-                            <a>法律条款</a>
-                            <a className="two">经营公示</a>
-                            <a>隐私条款</a>
+                            <a href="javascript:void(0);">法律条款</a>
+                            <a href="javascript:void(0);" className="two">经营公示</a>
+                            <a href="javascript:void(0);">隐私条款</a>
                         </div>
                         <div className="company-Tips">
-                            <p><a>版权所有百胜咨询上海有限公司</a></p>
-                            <p><a>沪ICP备05031779号-1</a></p>
+                            <p><a href="javascript:void(0);">版权所有百胜咨询上海有限公司</a></p>
+                            <p><a href="javascript:void(0);">沪ICP备05031779号-1</a></p>
                         </div>
                     </div>
                 </div>

@@ -9,6 +9,11 @@ export default class Xiangqing extends React.Component{
     componentWillMount(){
         http.get('getorder',{username: window.sessionStorage.getItem('username')}).then(res=>{   
             var data = res.data[res.data.length-1]
+            if(!data){
+                window.alert('暂无订单，请下单');
+                this.props.router.push('/list');
+                return false;
+            }
             this.setState({
                 items: JSON.parse(data.items),
                 orderNo: data.orderNo,

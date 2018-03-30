@@ -17,7 +17,7 @@ module.exports = {
                     sql += ` and password='${password}';`;
                     db.mysql.select(sql).then((data)=>{
                         if(data.length>0){
-                            res.send(apiResult(true,username));  
+                            res.send(apiResult(true,data));  
                         }else{
                             res.send(apiResult(false,null,'登录信息错误'));
                         }
@@ -35,13 +35,15 @@ module.exports = {
         app.post('/register',(req,res)=>{
             let username = req.body.username;
             let password = req.body.password;
+            let nicheng = req.body.nicheng;
+            let gender = req.body.gender
             var sql = `select * from users where username='${username}'`;
             db.mysql.select(sql).then(result=>{
                 if(result.length>0){
                     res.send(apiResult(false,null,'此用户已注册'));
                 }else{
-                    sql = `INSERT INTO users (username, password)
-                            VALUES ('${username}', '${password}');`;
+                    sql = `INSERT INTO users (username, password, gender, nicheng)
+                            VALUES ('${username}', '${password}', '${gender}', '${nicheng}');`;
                     db.mysql.insert(sql).then(data=>{
                         res.send(apiResult(true,data))
                     }).catch(error=>{
@@ -71,6 +73,31 @@ module.exports = {
             let username = req.body.username;
             let password = req.body.password;
             var sql = `update users set password='${password}' where username='${username}';`;
+            db.mysql.login(sql).then(result=>{
+                res.send(apiResult(true));
+            }).catch(error=>{
+                res.send(apiResult(false,null,null,error));
+            });
+        });
+
+        app.post('/changemsg',(req, res)=>{
+            let username = req.body.username;
+            let gender = req.body.gender;
+            let nicheng = req.body.nicheng;
+            var sql = `update users set gender='${gender}' where username='${username}';update users set nicheng='${nicheng}' where username='${username}';`;
+            db.mysql.login(sql).then(result=>{
+                res.send(apiResult(true));
+            }).catch(error=>{
+                res.send(apiResult(false,null,null,error));
+            });
+        });
+
+        app.post('/changeallmsg',(req, res)=>{
+            let username = req.body.username;
+            let gender = req.body.gender;
+            let nicheng = req.body.nicheng;
+            let password = req.body.password;
+            var sql = `update users set gender='${gender}' where username='${username}';update users set nicheng='${nicheng}' where username='${username}';update users set password='${password}' where username='${username}';`;
             db.mysql.login(sql).then(result=>{
                 res.send(apiResult(true));
             }).catch(error=>{

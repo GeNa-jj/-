@@ -13,8 +13,7 @@ import DingdanComponent from '../components/list/dingdan/dingdan'
 import CarComponent from '../components/header/card/cardcomponent'
 import MyorderComponent from '../components/list/dingdan/xiangqing/xiangqing'
 import DiziComponent from '../components/mycenter/dizhi/dizhi.js'
-
-
+import CityComponent from '../components/mycenter/dizhi/city/city'
 
 export default class RouterComponent extends React.Component{
     render(){
@@ -32,9 +31,7 @@ export default class RouterComponent extends React.Component{
                 <Route path="/car" component={CarComponent} />
                 <Route path="/xiangqing" component={MyorderComponent} />
                 <Route path="/dizi" component={DiziComponent} />
-        
-    
-                
+                <Route path="/city" component={CityComponent} />
             </Router>
         )
     }

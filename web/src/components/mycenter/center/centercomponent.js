@@ -29,7 +29,7 @@ export default class CenterComponent extends React.Component{
                 <div className="member-nav">
                     <Link to="/car" className="clearfix">
                         <span className="nav-left">我的卡券</span> 
-                        <span className="nav-right">0&nbsp;张</span>
+                        <span className="nav-right">3&nbsp;张</span>
                     </Link>
                 </div>
             </div>

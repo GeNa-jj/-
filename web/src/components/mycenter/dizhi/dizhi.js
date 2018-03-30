@@ -7,6 +7,9 @@ export default class dingdanComponent extends React.Component{
 	    $('.header_c').html('地址管理').css({fontWeight: 700,fontSize: '0.426667rem'});
 	    $('.header_r').text('')
 	}
+	tocity(){
+		this.props.router.push('/city');
+	}
 	render(){
 		return(
 			<div className="flex flex-y addr">
@@ -19,7 +22,7 @@ export default class dingdanComponent extends React.Component{
 							</div>
 							<div></div>
 						</div>
-						<div className="icon-addmarage">新增外送地址</div>
+						<div className="icon-addmarage" onClick={this.tocity.bind(this)}>新增外送地址</div>
 					</div>
 				</div>
 			</div>

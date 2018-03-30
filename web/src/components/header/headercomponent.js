@@ -25,7 +25,7 @@ export default class HeaderComponent extends React.Component{
     }
     componentDidMount(){
         if(window.sessionStorage.getItem('username')){
-            $('.avatar').find('p').html(window.sessionStorage.getItem('username'));
+            $('.avatar').find('p').html(window.sessionStorage.getItem('nicheng'));
             $('.exit').css('display','block');
         }
 

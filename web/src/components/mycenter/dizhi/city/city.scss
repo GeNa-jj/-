@@ -1,0 +1,94 @@
+.ant-cascader-picker{
+	width:100%;
+	font-size: 0.306667rem;
+    line-height: auto;
+    color: rgba(0,0,0,.65);
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    background-color: #fff;
+    border-radius: 0.026667rem;
+    outline: 0;
+}
+.ant-input.ant-cascader-input{
+	background-color: transparent!important;
+    cursor: pointer;
+    width: 100%;
+    display: block;
+}
+
+.ant-cascader-picker-label{
+	position: absolute;
+    left: 0;
+    height: 0.466667rem;
+    line-height: 0.266667rem;
+    top: 50%;
+    margin-top: -0.066667rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 100%;
+    padding: 0 0.08rem;
+}
+
+.anticon{display: inline-block;
+    font-style: normal;
+    vertical-align: baseline;
+    text-align: center;
+    text-transform: none;
+    line-height: 1;
+    text-rendering: optimizeLegibility;}
+.ant-cascader-picker-arrow{
+position: absolute;
+    z-index: 1;
+    top: 50%;
+    right: 0.08rem;
+    width: 0.08rem;
+    height: 0.08rem;
+    font-size: 0.08rem;
+    margin-top: -0.04rem;
+    line-height: 0.08rem;
+    color: rgba(0,0,0,.25);}
+
+.ant-cascader-menus{
+	font-size: 0.266667rem;
+    background: #fff;
+    position: absolute;
+    z-index: 1050;
+    border-radius: 0.026667rem;
+    -webkit-box-shadow: 0 0.013333rem 0.053333rem rgba(0,0,0,.15);
+    box-shadow: 0 0.013333rem 0.053333rem rgba(0,0,0,.15);
+    white-space: nowrap;}
+
+ .ant-cascader-menu{
+ 	display: inline-block;
+    vertical-align: top;
+    min-width: 2.76rem;
+    height: 1.2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-right: 0.013333rem solid #e8e8e8;
+    overflow: auto;
+    text-align: center;
+ }
+ .ant-cascader-menu-item{
+    padding: 0.026667rem 0.08rem;
+    line-height: 0.266667rem;
+    cursor: pointer;
+    white-space: nowrap;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+ }
+ .ant-cascader-menu-item-expand{
+ 	position: relative;
+    padding-right: 0.16rem;
+ }
+ .ant-cascader-menu-item-active:not(.ant-cascader-menu-item-disabled), .ant-cascader-menu-item-active:not(.ant-cascader-menu-item-disabled):hover{
+ 	background: #f5f5f5;
+    font-weight: 600;
+ }

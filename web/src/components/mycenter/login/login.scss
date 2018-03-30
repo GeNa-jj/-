@@ -25,6 +25,9 @@
                     width: 2.4rem;height: 0.853333rem;line-height: 0.853333rem;text-decoration: none;color: #e4442f;border: 0.026667rem solid #f1a197;border-radius: 0.133333rem;text-align: center;
                 }
                 input{font-size: 0.346667rem;height: 1.333333rem;background-color: #FFF;color: #999;}  
+                .selected{color: #333!important;}
+                .genderMan{padding-right: .293333rem;border-right: 1px solid #d5d5d5;height: .64rem;line-height: .64rem;color: #a5a5a5;font-size: 0.346667rem;}
+                .genderWoman{padding-left: .266667rem;padding-right: .133333rem;border: none;}
             }
             .item:last-child{
                 border: 0 none;text-align: center;margin-top: 0.666667rem;justify-content: center;align-items: center;

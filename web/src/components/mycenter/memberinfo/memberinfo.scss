@@ -19,9 +19,9 @@
                         height: 1.6rem;
                         line-height: 1.6rem;
                         display:flex;
-                        font-size:0.46875rem;
+                        font-size:0.346667rem;;
                         i{
-                            font-size:0.703125rem;
+                            font-size:0.533333rem;
                             margin-left:0.3125rem;
                             margin-right:0.390625rem;
                         }
@@ -34,7 +34,7 @@
                          height: 1.6rem;
                         line-height: 1.6rem;
                         i{
-                            font-size:0.703125rem;
+                            font-size:0.533333rem;
                             // margin-left:0.3125rem;
                             // margin-right:0.390625rem;
                         }
@@ -42,14 +42,17 @@
                     .zhenname{
                         height: 1.6rem;
                         line-height: 1.6rem;
-                        font-size:0.46875rem;
+                        font-size:0.346667rem;;
                          margin-right:0.46875rem;
                     }
                     .zhenname1{
                         height: 1.6rem;
                         line-height: 1.6rem;
-                        font-size:0.46875rem;
+                        font-size:0.346667rem;;
                     }
+                    .selected{color: #333!important;}
+                    .genderMan{padding-right: .293333rem;border-right: 1px solid #d5d5d5;height: .64rem;line-height: .64rem;color: #a5a5a5;font-size: 0.346667rem;}
+                    .genderWoman{padding-left: .266667rem;padding-right: .133333rem;border: none;}
                 }
                 .mima{
                     display: none;
@@ -71,7 +74,7 @@
             line-height: 1.333333rem;
             text-align: center;
             margin: 0 auto;
-            font-size: 0.426667rem;
+            font-size: 0.346667rem;;
             color: #fff;
             background-color: #ec4c33;
             display: block;

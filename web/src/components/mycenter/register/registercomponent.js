@@ -13,6 +13,7 @@ export default class RegisterComponent extends React.Component{
         show2: false,
         show3: false,
         show4: false,
+        show5: false,
         content: '请输入正确的手机号码'
     }
     focus(){
@@ -20,7 +21,8 @@ export default class RegisterComponent extends React.Component{
             show1: false,
             show2: false,
             show3: false,
-            show4: false
+            show4: false,
+            show5: false
         })
     }
     back(){
@@ -33,6 +35,9 @@ export default class RegisterComponent extends React.Component{
         }else{
             $('.password').attr('type','password');
         }
+    }
+    selecte(e){
+        $(e.target).toggleClass('selected').siblings('span').toggleClass('selected');
     }
     register(){
         if(!/^1[34578]\d{9}$/.test(this.refs.phone.value)){
@@ -63,8 +68,15 @@ export default class RegisterComponent extends React.Component{
                 show4: true,
                 content: '密码不一致'
             });
+        }else if($('.nicheng').val()==''){
+            this.setState({
+                show5: true,
+                content: '请输入昵称'
+            });
         }else{ 
-            http.post('register',{username: this.refs.phone.value,password: $('.password')[0].value}).then(res=>{
+            var gender = $('.selected').text();
+            var nicheng = $('.nicheng').val();
+            http.post('register',{username: this.refs.phone.value,password: $('.password')[0].value,gender,nicheng}).then(res=>{
                 if(res.error){
                     window.alert(res.error);
                 }else if(res.message){ 
@@ -144,7 +156,30 @@ export default class RegisterComponent extends React.Component{
                                     <input type="password" maxLength="16" className="password" placeholder="请重新输入密码" ref="password" onFocus={this.focus.bind(this)}/>
                                 </div>
                             </div>
+                            
                             <LoginErrorComponent show={this.state.show4} content={this.state.content}/>
+                        </div>
+                        <div className="item">
+                            <div className="flex">
+                                <div className="icon">
+                                    <i className="iconfont icon-xingbie"></i>
+                                </div>
+                                <div className="input flex-1">
+                                    <span id="xn-genderInput-selectMan" className="genderMan selected" onClick={this.selecte.bind(this)}>先生</span>
+                                    <span id="xn-genderInput-selectWoman" className="genderMan genderWoman" onClick={this.selecte.bind(this)}>女士</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="item">
+                            <div className="flex">
+                                <div className="icon">
+                                    <i className="iconfont icon-xingmingyonghumingnicheng"></i>
+                                </div>
+                                <div className="input flex-1">
+                                    <input type="text" maxLength="10" className="nicheng" placeholder="请输入昵称" onFocus={this.focus.bind(this)}/>
+                                </div>
+                            </div>
+                            <LoginErrorComponent show={this.state.show5} content={this.state.content}/>
                         </div>
                         <div className="item flex">
                             <button onClick={this.register.bind(this)}>注册</button>
