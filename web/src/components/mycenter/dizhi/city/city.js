@@ -11,7 +11,7 @@ export default class dingdanComponent extends React.Component{
 	    $('.header_r').text('');
 	  
 	    var sbs=document.getElementsByClassName('ant-cascader-picker')[0];
-	    console.log(sbs)
+	    // console.log(sbs)
 	    var ss=null;
 	    if(sbs){
 	    	 $(sbs).click(function(){
