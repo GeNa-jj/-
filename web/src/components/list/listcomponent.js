@@ -38,7 +38,25 @@ export default class ListComponent extends React.Component{
 
         });
         $('li').eq(7).css('color','red');
-    } 
+
+        this.refs.foot.total();
+
+        $('.mainRight')[0].onscroll = function(e){
+            console.log(e)
+                 
+        } 
+    }
+    componentWillMount(){
+        if(window.sessionStorage.getItem('items')){  
+            this.setState({
+                show:true
+            })       
+        }else{
+            this.setState({
+                show:false
+            }) 
+        }       
+    }
     state = {
         show:false,
         id:null
@@ -104,7 +122,7 @@ export default class ListComponent extends React.Component{
                         </section>
                     </div>
                 </div>
-                <Footer a={this.props.router} show={this.state.show} id={this.state.id}/>
+                <Footer a={this.props.router} ref="foot" show={this.state.show} id={this.state.id}/>
             </div>
         )
     }

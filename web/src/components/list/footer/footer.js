@@ -34,7 +34,7 @@ export default class Footer extends React.Component{
     }
     state = {
         i:0,
-        dataset:[]
+        dataset: window.sessionStorage.getItem('items') ? JSON.parse(window.sessionStorage.getItem('items')) : []
     }
     showup(){
         this.state.i++;

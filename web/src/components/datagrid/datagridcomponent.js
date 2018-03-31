@@ -23,13 +23,14 @@ class DatagridComponent extends React.Component{
           
     }
     getShowUp(id,e){ 
-         this.props.showup();
-         this.props.hidden();
-         this.props.getId(id);
-              
-         $('<div class="redpot"/>').css({width: '20px',height: '20px',borderRadius:'50%',backgroundColor: '#ff4040',zIndex: '9999', position: 'absolute',left: '550px',top: '1000px'}).appendTo('body').animate({left: '58px',top: '1280px'},function(){
+        this.props.showup();
+        this.props.hidden();
+        this.props.getId(id);
+        
+        var $img = $(e.target).closest('.datagrid').find('img').css({position: 'absolute',left: '100px',top: '300px'}).appendTo('body').animate({left: '58px',top: '1280px',width: '0', height: '0'},function(){
             $(this).remove()
-         });
+        });
+             
     }
     componentDidUpdate(){
         if($('.datarigTop').find('span').text()==''){

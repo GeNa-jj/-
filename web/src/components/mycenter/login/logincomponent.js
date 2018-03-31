@@ -88,6 +88,7 @@ class LoginComponent extends React.Component{
                 window.sessionStorage.setItem('username',res.data[0].username);
                 window.sessionStorage.setItem('gender',res.data[0].gender);
                 window.sessionStorage.setItem('nicheng',res.data[0].nicheng);
+                window.sessionStorage.removeItem('items');
                 this.props.router.push('/');
             }
         }).catch(error => {
