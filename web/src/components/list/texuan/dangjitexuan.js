@@ -58,10 +58,10 @@ class Dangjitexuan extends React.Component{
             }else if(item.genre=='饮料'){
                 drinks.push(item);
             }
-        })
+        })    
         return(
             <div id="dangji">
-                <dl>
+                <dl className="dangjitexuan">
                     <dt>当季特选</dt>
                     {
                         dangjitexuan.map((item) => {
@@ -77,7 +77,7 @@ class Dangjitexuan extends React.Component{
                         })
                     }
                 </dl>
-                <dl>
+                <dl className="pisa">
                 <dt>披萨</dt>
                     {
                         pisa.map((item) => {
@@ -93,7 +93,7 @@ class Dangjitexuan extends React.Component{
                         })
                     }
                 </dl>
-                <dl>
+                <dl className="yimian">
                     <dt>意面</dt>
                     {
                         yimian.map((item) => {
@@ -109,7 +109,7 @@ class Dangjitexuan extends React.Component{
                         })
                     }
                 </dl>
-                <dl>
+                <dl className="fanshi">
                     <dt>饭食</dt>
                     {
                         fanshi.map((item) => {
@@ -125,7 +125,7 @@ class Dangjitexuan extends React.Component{
                         })
                     }
                 </dl>
-                <dl>
+                <dl className="xiaochi">
                     <dt>小吃</dt>
                     {
                         xiaochi.map((item) => {
@@ -141,7 +141,7 @@ class Dangjitexuan extends React.Component{
                         })
                     }
                 </dl>
-                <dl>
+                <dl className="tiandian">
                     <dt>甜点</dt>
                     {
                         tiandian.map((item) => {
@@ -157,7 +157,7 @@ class Dangjitexuan extends React.Component{
                         })
                     }
                 </dl>
-                <dl>
+                <dl className="drinks">
                     <dt>饮料</dt>
                     {
                         drinks.map((item) => {

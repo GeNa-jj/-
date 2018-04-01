@@ -40,15 +40,15 @@ export default class Footer extends React.Component{
         this.state.i++;
         if(this.state.i % 2 !=0){
             $(".footergoods").stop(true,true).animate({height:"5.333333rem"});
-            $(".modalShade").stop(true,true).animate({height:"100%"});
+            $(".modalShade").show().animate({opacity: '0.5'});
         }else{
             $(".footergoods").stop(true,true).animate({height:"0rem"});
-            $(".modalShade").stop(true,true).animate({height:"0"});
+            $(".modalShade").animate({opacity: '0'}).hide(100);
         }
         
     }
     hide(){
-        $(".modalShade").stop(true,true).animate({height:"0"});
+        $(".modalShade").animate({opacity: '0'}).hide(100);
         $(".footergoods").stop(true,true).animate({height:"0rem"});
         this.state.i++;
     }

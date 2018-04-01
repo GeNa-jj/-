@@ -30,5 +30,19 @@ module.exports = {
                 res.send(apiResult(false,null,null,error));
             });
         });
+
+        app.get('/zhifu',(req,res)=>{
+            let username = req.query.username;
+            let orderNo = req.query.orderNo*1;
+            console.log(orderNo);
+            console.log(username);
+            let status = 1;
+            var sql = `update orders set status='${status}' where username = '${username}' and orderNo = '${orderNo}' `;
+            db.mysql.insert(sql).then(data=>{
+                res.send(apiResult(true,data))
+            }).catch(error=>{
+                res.send(apiResult(false,null,null,error));
+            });
+        });
     }
 }

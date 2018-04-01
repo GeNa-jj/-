@@ -7,32 +7,25 @@ import http from '../../../../utils/httpclient'
 
 export default class Xiangqing extends React.Component{
     componentWillMount(){
-        http.get('getorder',{username: window.sessionStorage.getItem('username')}).then(res=>{   
-            var data = res.data[res.data.length-1]
-            if(!data){
-                window.alert('暂无订单，请下单');
-                this.props.router.push('/list');
-                return false;
-            }
+        http.get('getorder',{username: window.sessionStorage.getItem('username')}).then(res=>{
+            // console.log(res.data[0].status);  
+            
             this.setState({
-                items: JSON.parse(data.items),
-                orderNo: data.orderNo,
-                status: data.status,
-                username: data.username,
-                address:data.address
+                items:res.data,
+                username:res.data[0].username,
+                address:res.data[0].address
             })
-                 
-                 
+            // console.log(this.props.params);      
         })
     }
     componentDidMount(){
         $('.header_c').html('订单管理').css({fontWeight: 700,fontSize: '0.426667rem'});
-        $('.header_r').text('')
+        $('.header_r').text('');
+        $('.foot1').text('已付款').attr('disabled','disabled');
     }
+        
     state ={
         items: [],
-        orderNo: null,
-        status: null,
         username: null,
         address:null
     }
@@ -43,11 +36,51 @@ export default class Xiangqing extends React.Component{
             total += $(item).text()*1
         });
         $('.total').text(total+9);
+
+        $('.foot1').text('已付款').attr('disabled','disabled');
+        $('.foot0').text('确定付款');
+        $('.foot1').css('opacity','0.3');
+        
+       
     }
-    render(){    
+    back(){
+        this.props.router.goBack();
+    }
+
+    getStatus(){
+        http.get('zhifu',{username: window.sessionStorage.getItem('username'),orderNo:this.props.params.orderNo}).then(res=>{
+            console.log(res);
+            console.log(res.data.changedRows);
+            if(res.data.changedRows==1){
+                window.alert('付款成功')
+                $('#foot').text('已付款');
+                $('#foot').css('opacity','0.3').attr('disabled','disabled');
+            }else{
+                window.alert('已经付款');
+            }
+        })
+    }
+    render(){
+        var getres = [];
+        var status = null;
+        var num = this.props.params.orderNo*1;
+        this.state.items.map((item)=>{
+            if(item.orderNo == num){
+                status = item.status;
+                getres=JSON.parse(item.items);
+            }
+
+        })  
         return(
                 <div id="xiangqing">
-                    <HeaderComponent a={this.props.router}/>
+                    <div className="d_header">
+                        <div className="d_header_l">
+                        <button onClick={this.back.bind(this)}><i className="iconfont icon-xiangzuo"></i></button>
+                        </div>
+                        <div className="d_header_r">
+                            <h1>订单管理</h1>
+                        </div>
+                    </div>
                     <div id="main">
                         <div className="dizhi">
                             <div className="dingwei"><img src="src/assets/imgs/dingwei.svg"/></div>
@@ -65,15 +98,14 @@ export default class Xiangqing extends React.Component{
                            </ul>
                            <ul className="mainbody">
                             {
-                                this.state.items.map(item=>{
-                                    return (
+                                getres.map((item)=>{
+                                    return(
                                         <li key={item.id}>
-                                            <span>{item.name}</span>
-                                            <span>{item.n}</span>
-                                            <span>￥<a className="price">{item.price}</a></span>
+                                          <span>{item.name}</span>
+                                          <span>{item.n}</span>
+                                          <span className="price">{item.price}</span>
                                         </li>
-                                        
-                                    )
+                                        )
                                 })
                             }
                                 <li>
@@ -90,14 +122,14 @@ export default class Xiangqing extends React.Component{
                         <div className="mainNav"></div>
                         <dl className="mainNews">
                             <dt>订单信息</dt>
-                            <dd>订单号：{this.state.orderNo}</dd>
+                            <dd>订单号：{this.props.params.orderNo}</dd>
                             <dd>下单时间：**********</dd>
                             <dd>配送时间：**********</dd>
                             <dd>支付方式：货到付款</dd>
                             <dd>备注：无</dd>
                         </dl>
                     </div>
-                    <div id="foot">联系客服</div>
+                    <button id="foot" className={'foot'+status} onClick = {this.getStatus.bind(this)}></button>
                 </div>
             )
     }

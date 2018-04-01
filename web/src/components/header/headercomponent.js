@@ -29,7 +29,7 @@ export default class HeaderComponent extends React.Component{
             $('.exit').css('display','block');
         }
 
-        var arr = ['/','/list','/center','/discount','/xiangqing','/memberinfo','/dizi'];
+        var arr = ['/','/list','/center','/discount','/myorder','/memberinfo','/dizi'];
         var n = arr.indexOf(this.props.a.location.pathname);     
         var bpy = $('li').eq(n).find('i').css('background-position-y');   
         $('li').eq(n).find('i').css('background-position','-0.8rem '+bpy);
@@ -39,10 +39,10 @@ export default class HeaderComponent extends React.Component{
         $('.mycenter_list').animate({left: '-6rem'}).hide(100);
         $('.cover').animate({opacity: '0'}).hide(100,()=>{
             if(window.sessionStorage.getItem('username')){
-                if(this.props.a.location.pathname=='/xiangqing'){
+                if(this.props.a.location.pathname=='/myorder'){
                     return false;
                 }else{
-                    this.props.a.push('/xiangqing');
+                    this.props.a.push('/myorder');
                 } 
             }else{
                 this.props.a.push('/login');

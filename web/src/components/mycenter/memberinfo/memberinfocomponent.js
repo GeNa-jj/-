@@ -130,7 +130,7 @@ export default class MemberInfoComponent extends React.Component{
         
         $(e.target).toggleClass('icon-xiangshang').toggleClass('icon-xiangxia');
     }
-    selecte(e){
+    select(e){
         $(e.target).toggleClass('selected').siblings('span').toggleClass('selected');
     }
     render(){
@@ -162,8 +162,8 @@ export default class MemberInfoComponent extends React.Component{
                                 </div>
                                 <div className="sbox">
                                     <div className="zhenname">
-                                        <span id="xn-genderInput-selectMan" className="genderMan selected" onClick={this.selecte.bind(this)}>先生</span>
-                                        <span id="xn-genderInput-selectWoman" className="genderMan genderWoman" onClick={this.selecte.bind(this)}>女士</span>
+                                        <span id="xn-genderInput-selectMan" className="genderMan selected" onClick={this.select.bind(this)}>先生</span>
+                                        <span id="xn-genderInput-selectWoman" className="genderMan genderWoman" onClick={this.select.bind(this)}>女士</span>
                                     </div>
                                 </div>
                                 

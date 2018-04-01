@@ -1,26 +1,48 @@
-body,html,#app{
-    height:100%;
-}
 #xiangqing{
     height:100%;
     display:flex;
     flex-direction:column;
-    #head{
-        height:1.386667rem;
-        display:flex;
-        flex-direction:row;
-        justify-content:center;
-        align-items:center;
-        font-size:0.533333rem;
-        font-weight:600;
-        position:relative;
-        i{
-            display:flex;
-            font-size:0.533333rem;
-            position:absolute;
-            left:0.133333rem;
+    .d_header{
+        min-height: 1.386667rem;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #e1e1e1;
+        background-color: #fff;
+        font-size: .373333rem;
+        .d_header_l{
+            width: 25%;
+            color: #e94f4f;
+            white-space: nowrap;
+            button{
+                width: 1.333333rem;
+                height: 1.333333rem;
+                background-color: transparent;
+                border: 0;
+                color: inherit;
+                line-height: 1;
+                font-size: .56rem;
+                i{
+                    color: #000;
+                    font-size: 0.533333rem;
+                }
+            }  
         }
-        border-bottom:0.026667rem solid #ccc;
+        .d_header_r{
+            width: 50%;
+            // flex: 1;
+            text-align: center;
+            h1{
+                overflow: visible!important;
+                font-weight: 700!important;
+                color: #333;
+                line-height: 1;
+                width: auto;
+                font-size:0.40625rem;
+                // margin-right: 2.109375rem;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+        }
     }
     #main{
         flex:1;

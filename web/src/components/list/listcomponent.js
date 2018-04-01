@@ -28,23 +28,42 @@ export default class ListComponent extends React.Component{
 
             autoplayDisableOnInteraction:false,
         });
-
+        var obj = {};
+        var isfirst = true;
+        function getoffsetTop(){
+            if(isfirst){
+                obj = {
+                    '.dangjitexuan': $('.dangjitexuan').offset().top,
+                    '.pisa': $('.pisa').offset().top,
+                    '.yimian': $('.yimian').offset().top,
+                    '.fanshi': $('.fanshi').offset().top,
+                    '.xiaochi': $('.xiaochi').offset().top,
+                    '.tiandian': $('.tiandian').offset().top,
+                    '.drinks': $('.drinks').offset().top
+                }
+                isfirst = false;  
+            }
+        }  
         $('.mainLeft').on('click','li',function(){
-            $(this).css('color','red');
-            $(this).siblings('li').css('color','');
-
-            var index=$(this).index();
-            $("#dangji dl").eq(index).show().siblings().hide();
-
+            getoffsetTop();
+            $('.mainRight').animate({'scrollTop':obj[this.className]-($('.swiper-container').outerHeight(true)+$('header').outerHeight(true))*1.03},500); 
         });
+
         $('li').eq(7).css('color','red');
-
-        this.refs.foot.total();
-
+        $('.main')[0].onscroll = function(e){
+            getoffsetTop();
+        }
         $('.mainRight')[0].onscroll = function(e){
-            console.log(e)
-                 
+            getoffsetTop();
+            var arr = ['.dangjitexuan', '.pisa', '.yimian', '.fanshi', '.xiaochi', '.tiandian', '.drinks'];
+            for(var i=0;i<arr.length;i++){
+                if($(arr[i]).offset().top < $('#list').outerHeight()*0.75 && $(arr[i]).offset().top>($('#list').outerHeight()*0.75 - $(arr[i]).outerHeight())){
+                    $('li').eq(i+7).css('color','red').siblings('li').css('color','');
+                }  
+            }
+            $('.main').scrollTop($(e.target).scrollTop());    
         } 
+        this.refs.foot.total();
     }
     componentWillMount(){
         if(window.sessionStorage.getItem('items')){  
@@ -81,31 +100,31 @@ export default class ListComponent extends React.Component{
                     <CarouselComponent />
                     <div className="mainTop">
                         <ul className="mainLeft">
-                            <li>
+                            <li className=".dangjitexuan">
                                 <i className="iconfont icon-huangguan"></i>
                                 <p>当季特选</p>
                             </li>
-                            <li>
+                            <li className=".pisa">
                                 <i className="iconfont icon-pisa"></i>
                                 <p>披萨</p>
                             </li>
-                            <li>
+                            <li className=".yimian">
                                 <i className="iconfont icon-mianshi"></i>
                                 <p>意面</p>
                             </li>
-                            <li>
+                            <li className=".fanshi">
                                 <i className="iconfont icon-mifan"></i>
                                 <p>饭食</p>
                             </li>
-                            <li>
+                            <li className=".xiaochi">
                                 <i className="iconfont icon-xiaochi"></i>
                                 <p>小吃</p>
                             </li>
-                            <li>
+                            <li className=".tiandian">
                                 <i className="iconfont icon-tangcai"></i>
                                 <p>甜点</p>
                             </li>
-                            <li>
+                            <li className=".drinks">
                                 <i className="iconfont icon-yinliao"></i>
                                 <p>饮料</p>
                             </li>

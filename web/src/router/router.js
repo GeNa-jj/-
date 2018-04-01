@@ -11,9 +11,10 @@ import DiscountComponent from '../components/home/discount/discountcomponent'
 import MemberInfoComponent from '../components/mycenter/memberinfo/memberinfocomponent'
 import DingdanComponent from '../components/list/dingdan/dingdan'
 import CarComponent from '../components/header/card/cardcomponent'
-import MyorderComponent from '../components/list/dingdan/xiangqing/xiangqing'
 import DiziComponent from '../components/mycenter/dizhi/dizhi.js'
 import CityComponent from '../components/mycenter/dizhi/city/city'
+import XiangqingComponent from '../components/list/dingdan/xiangqing/xiangqing'
+import MyorderComponent from '../components/list/dingdan/myorder/myorder'
 
 export default class RouterComponent extends React.Component{
     render(){
@@ -29,9 +30,10 @@ export default class RouterComponent extends React.Component{
                 <Route path="/memberinfo" component={MemberInfoComponent} />
                 <Route path="/dingdan" component={DingdanComponent} />
                 <Route path="/car" component={CarComponent} />
-                <Route path="/xiangqing" component={MyorderComponent} />
                 <Route path="/dizi" component={DiziComponent} />
                 <Route path="/city" component={CityComponent} />
+                <Route path="/xiangqing(/:orderNo)" component={XiangqingComponent} />
+                <Route path="/myorder" component={MyorderComponent} />
             </Router>
         )
     }
