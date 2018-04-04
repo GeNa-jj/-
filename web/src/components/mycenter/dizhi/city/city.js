@@ -21,17 +21,62 @@ export default class CityComponent extends React.Component{
 		quyu : [],
         show1: false,
         show2: false,
+        show3: false,
         content: '收货人不能为空'
     }
     focus(e){
          this.setState({
             show1: false,
-            show2: false
+            show2: false,
+            show3: false
         })
         e.target.select();
     }
     sure(){
-		
+		if($('.name').val()==''){
+            this.setState({
+                show1: true
+            })
+            return false;
+        }else if($('.shouji').val()==''){
+            this.setState({
+                show2: true,
+                content: '手机号码不能为空'
+            })
+        }else if(!/^1[34578]\d{9}$/.test($('.shouji').val())){
+            this.setState({
+                show2: true,
+                content: '请输入有效手机号码'
+            })
+        }else if($('#jiedao').val()==''){
+            this.setState({
+                show3: true,
+                content: '详细地址不能为空'
+            })     
+        }else{
+            var arr = {};
+            arr.name = $('.name').val();
+            arr.shouji = $('.shouji').val();
+            arr.sheng = $('#sheng').val();
+            arr.city = $('#city').val();
+            arr.quyu = $('#quyu').val();
+            arr.jiedao = $('#jiedao').val();
+            arr = JSON.stringify(arr);
+            var address = {};
+            address.address = arr;
+            address.username = window.sessionStorage.getItem('username');
+                 
+            http.post('addAddress',address).then(res=>{
+                if(res.status){
+                    this.props.router.goBack();
+                }else{
+                    window.alert('增加地址失败');
+                }     
+            }).catch(error=>{
+                window.alert(error);
+            })
+                 
+        }
     }
     back(){
     	this.props.router.goBack();
@@ -55,9 +100,7 @@ export default class CityComponent extends React.Component{
 				});
 				return false;
 			}
-    	}
-    	console.log(666)
-    	     
+    	}	     
     }
 	render(){     
 		return (
@@ -77,7 +120,7 @@ export default class CityComponent extends React.Component{
                                 <div className="bbox">
                                     <i className="iconfont icon-xingmingyonghumingnicheng"></i>
                                     <div className="nickname">收货人</div>
-                                    <input type="text" className="nicheng" placeholder="请输入收货人" style={{textAlign: 'right'}} onFocus={this.focus.bind(this)}/>
+                                    <input type="text" className="name" placeholder="请输入收货人" style={{textAlign: 'right'}} onFocus={this.focus.bind(this)}/>
                                 </div>
                                 <LoginErrorComponent show={this.state.show1} content={this.state.content}/>
                             </li>
@@ -85,7 +128,7 @@ export default class CityComponent extends React.Component{
                                 <div className="bbox">
                                     <i className="iconfont icon-shouji"></i>
                                     <div className="nickname">手机</div>
-                                	<input type="text" className="nicheng" placeholder="请输入收货人手机" style={{textAlign: 'right'}} onFocus={this.focus.bind(this)}/>
+                                	<input type="text" className="shouji" maxLength="11" placeholder="请输入收货人手机" style={{textAlign: 'right'}} onFocus={this.focus.bind(this)}/>
                                 </div>
                                 <LoginErrorComponent show={this.state.show2} content={this.state.content}/>
                             </li>
@@ -129,8 +172,9 @@ export default class CityComponent extends React.Component{
 								<div className="bbox">
                                     <div className="nickname">详细地址</div>
 
-                                    <input name="jiedao" id="jiedao" placeholder="请输入详细地址" style={{textAlign: 'right'}}></input>
+                                    <input name="jiedao" id="jiedao" placeholder="请输入详细地址" style={{textAlign: 'right'}} onFocus={this.focus.bind(this)}></input>
                                 </div>
+                                <LoginErrorComponent show={this.state.show3} content={this.state.content}/>
                             </li>
                         </ul>
                     </div>

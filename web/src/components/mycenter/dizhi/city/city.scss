@@ -72,8 +72,6 @@
                         display:flex;
                         font-size:0.346667rem;;
                         justify-content:space-between;
-                        
-
                         i{
                             font-size:0.533333rem;
                             margin-left:0.3125rem;
@@ -85,6 +83,8 @@
                         }
                         select{
                             margin-right: 0.46875rem;
+                            border: 0 none;
+
                         }
                     }
                     .sbox{display:flex;

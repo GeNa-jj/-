@@ -10,10 +10,25 @@ Target Server Type    : MYSQL
 Target Server Version : 50714
 File Encoding         : 65001
 
-Date: 2018-03-31 21:38:28
+Date: 2018-04-05 01:10:15
 */
 
 SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for address
+-- ----------------------------
+DROP TABLE IF EXISTS `address`;
+CREATE TABLE `address` (
+  `phone` varchar(255) DEFAULT NULL,
+  `address` text
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of address
+-- ----------------------------
+INSERT INTO `address` VALUES ('13432888888', '{\"name\":\"卢俊杰\",\"shouji\":\"13411111111\",\"sheng\":\"北京\",\"city\":\"北京市\",\"quyu\":\"东城区\",\"jiedao\":\"11111111111111111\"}');
+INSERT INTO `address` VALUES ('13432888888', '{\"name\":\"青蛙\",\"shouji\":\"13432111111\",\"sheng\":\"广东\",\"city\":\"广州市\",\"quyu\":\"天河区\",\"jiedao\":\"上元岗\"}');
 
 -- ----------------------------
 -- Table structure for car
@@ -232,14 +247,14 @@ CREATE TABLE `orders` (
 -- ----------------------------
 -- Records of orders
 -- ----------------------------
-INSERT INTO `orders` VALUES ('13432888888', '[{\"id\":1,\"name\":\"超级至尊比萨\",\"genre\":\"当季精选\",\"img\":\"bs.jpg\",\"exp\":\"芝心半价，每单限一份\",\"price\":\"94.0\",\"pro\":\"芝普装\",\"n\":1}]', '暂无此功能', '0', '2018229152429');
-INSERT INTO `orders` VALUES ('13432888888', '[{\"id\":1,\"name\":\"超级至尊比萨\",\"genre\":\"当季精选\",\"img\":\"bs.jpg\",\"exp\":\"芝心半价，每单限一份\",\"price\":\"94.0\",\"pro\":\"芝普装\",\"n\":1}]', '暂无此功能', '0', '2018229151911');
-INSERT INTO `orders` VALUES ('13432888888', '[{\"id\":50,\"name\":\"欧式培根炒饭\",\"genre\":\"饭食\",\"img\":\"fs5.jpg\",\"exp\":null,\"price\":\"27.0\",\"pro\":\"份\",\"n\":2},{\"id\":51,\"name\":\"小鸡炖菌菇饭\",\"genre\":\"饭食\",\"img\":\"fs6.jpg\",\"exp\":null,\"price\":\"26.0\",\"pro\":\"份\",\"n\":2}]', '暂无此功能', '0', '201822915319');
-INSERT INTO `orders` VALUES ('13432888888', '[{\"id\":52,\"name\":\"西班牙风情海鲜意面\",\"genre\":\"意面\",\"img\":\"ym.jpg\",\"exp\":null,\"price\":\"40.0\",\"pro\":\"份\",\"n\":2},{\"id\":53,\"name\":\"意式肉酱面\",\"genre\":\"意面\",\"img\":\"ym1.jpg\",\"exp\":null,\"price\":\"35.0\",\"pro\":\"份\",\"n\":3}]', '暂无此功能', '0', '201822916712');
-INSERT INTO `orders` VALUES ('13432888888', '[{\"id\":4,\"name\":\"聚乐盒(普装)\",\"genre\":\"当季精选\",\"img\":\"jl1.jpg\",\"exp\":\"随心配 75折\",\"price\":\"95.0\",\"pro\":null,\"n\":2},{\"id\":5,\"name\":\"2人敢肆拼比萨套餐\",\"genre\":\"当季精选\",\"img\":\"bs2.jpg\",\"exp\":\"最多省38元\",\"price\":\"149.0\",\"pro\":null,\"n\":2}]', '暂无此功能', '0', '2018229171038');
+INSERT INTO `orders` VALUES ('13432888888', '[{\"id\":1,\"name\":\"超级至尊比萨\",\"genre\":\"当季精选\",\"img\":\"bs.jpg\",\"exp\":\"芝心半价，每单限一份\",\"price\":\"94.0\",\"pro\":\"芝普装\",\"n\":1}]', '暂无此功能', '1', '2018229152429');
+INSERT INTO `orders` VALUES ('13432888888', '[{\"id\":1,\"name\":\"超级至尊比萨\",\"genre\":\"当季精选\",\"img\":\"bs.jpg\",\"exp\":\"芝心半价，每单限一份\",\"price\":\"94.0\",\"pro\":\"芝普装\",\"n\":1}]', '暂无此功能', '1', '2018229151911');
+INSERT INTO `orders` VALUES ('13432888888', '[{\"id\":50,\"name\":\"欧式培根炒饭\",\"genre\":\"饭食\",\"img\":\"fs5.jpg\",\"exp\":null,\"price\":\"27.0\",\"pro\":\"份\",\"n\":2},{\"id\":51,\"name\":\"小鸡炖菌菇饭\",\"genre\":\"饭食\",\"img\":\"fs6.jpg\",\"exp\":null,\"price\":\"26.0\",\"pro\":\"份\",\"n\":2}]', '暂无此功能', '1', '201822915319');
+INSERT INTO `orders` VALUES ('13432888888', '[{\"id\":52,\"name\":\"西班牙风情海鲜意面\",\"genre\":\"意面\",\"img\":\"ym.jpg\",\"exp\":null,\"price\":\"40.0\",\"pro\":\"份\",\"n\":2},{\"id\":53,\"name\":\"意式肉酱面\",\"genre\":\"意面\",\"img\":\"ym1.jpg\",\"exp\":null,\"price\":\"35.0\",\"pro\":\"份\",\"n\":3}]', '暂无此功能', '1', '201822916712');
+INSERT INTO `orders` VALUES ('13432888888', '[{\"id\":4,\"name\":\"聚乐盒(普装)\",\"genre\":\"当季精选\",\"img\":\"jl1.jpg\",\"exp\":\"随心配 75折\",\"price\":\"95.0\",\"pro\":null,\"n\":2},{\"id\":5,\"name\":\"2人敢肆拼比萨套餐\",\"genre\":\"当季精选\",\"img\":\"bs2.jpg\",\"exp\":\"最多省38元\",\"price\":\"149.0\",\"pro\":null,\"n\":2}]', '暂无此功能', '1', '2018229171038');
 INSERT INTO `orders` VALUES ('13168232150', '[{\"id\":1,\"name\":\"超级至尊比萨\",\"genre\":\"当季精选\",\"img\":\"bs.jpg\",\"exp\":\"芝心半价，每单限一份\",\"price\":\"94.0\",\"pro\":\"芝普装\",\"n\":1},{\"id\":2,\"name\":\"新奥尔良风情烤肉比萨\",\"genre\":\"当季精选\",\"img\":\"bs1.jpg\",\"exp\":\"芝心半价，每单限一份\",\"price\":\"90.0\",\"pro\":\"芝普装\",\"n\":1}]', '暂无此功能', '0', '201822917933');
-INSERT INTO `orders` VALUES ('13553470309', '[{\"id\":2,\"name\":\"新奥尔良风情烤肉比萨\",\"genre\":\"当季精选\",\"img\":\"bs1.jpg\",\"exp\":\"芝心半价，每单限一份\",\"price\":\"90.0\",\"pro\":\"芝普装\",\"n\":2}]', '暂无此功能', '0', '2018229171324');
-INSERT INTO `orders` VALUES ('13553470309', '[{\"id\":3,\"name\":\"聚乐盒(芝心)\",\"genre\":\"当季精选\",\"img\":\"jl.jpg\",\"exp\":\"随心配 75折\",\"price\":\"111.0\",\"pro\":null,\"n\":1}]', '暂无此功能', '0', '2018229171410');
+INSERT INTO `orders` VALUES ('13553470309', '[{\"id\":2,\"name\":\"新奥尔良风情烤肉比萨\",\"genre\":\"当季精选\",\"img\":\"bs1.jpg\",\"exp\":\"芝心半价，每单限一份\",\"price\":\"90.0\",\"pro\":\"芝普装\",\"n\":2}]', '暂无此功能', '1', '2018229171324');
+INSERT INTO `orders` VALUES ('13553470309', '[{\"id\":3,\"name\":\"聚乐盒(芝心)\",\"genre\":\"当季精选\",\"img\":\"jl.jpg\",\"exp\":\"随心配 75折\",\"price\":\"111.0\",\"pro\":null,\"n\":1}]', '暂无此功能', '1', '2018229171410');
 INSERT INTO `orders` VALUES ('13168232150', '[{\"id\":1,\"name\":\"超级至尊比萨\",\"genre\":\"当季精选\",\"img\":\"bs.jpg\",\"exp\":\"芝心半价，每单限一份\",\"price\":\"94.0\",\"pro\":\"芝普装\",\"n\":1}]', '暂无此功能', '0', '2018229171319');
 INSERT INTO `orders` VALUES ('13553470309', '[{\"id\":3,\"name\":\"聚乐盒(芝心)\",\"genre\":\"当季精选\",\"img\":\"jl.jpg\",\"exp\":\"随心配 75折\",\"price\":\"111.0\",\"pro\":null,\"n\":1}]', '暂无此功能', '1', '201822917152');
 INSERT INTO `orders` VALUES ('13168232150', '[{\"id\":1,\"name\":\"超级至尊比萨\",\"genre\":\"当季精选\",\"img\":\"bs.jpg\",\"exp\":\"芝心半价，每单限一份\",\"price\":\"94.0\",\"pro\":\"芝普装\",\"n\":1}]', '暂无此功能', '0', '2018229171345');
@@ -256,7 +271,7 @@ INSERT INTO `orders` VALUES ('13168232151', '[{\"id\":5,\"name\":\"2人敢肆拼
 INSERT INTO `orders` VALUES ('13553470309', '[{\"id\":27,\"name\":\"超级至尊比萨\",\"genre\":\"比萨\",\"img\":\"bs.jpg\",\"exp\":\"芝心半价，每单限一份\",\"price\":\"94.0\",\"pro\":\"芝普装\",\"n\":2}]', '暂无此功能', '1', '2018229175342');
 INSERT INTO `orders` VALUES ('13553470309', '[{\"id\":2,\"name\":\"新奥尔良风情烤肉比萨\",\"genre\":\"当季精选\",\"img\":\"bs1.jpg\",\"exp\":\"芝心半价，每单限一份\",\"price\":\"90.0\",\"pro\":\"芝普装\",\"n\":1}]', '暂无此功能', '1', '201822918425');
 INSERT INTO `orders` VALUES ('13553470309', '[{\"id\":3,\"name\":\"聚乐盒(芝心)\",\"genre\":\"当季精选\",\"img\":\"jl.jpg\",\"exp\":\"随心配 75折\",\"price\":\"111.0\",\"pro\":null,\"n\":1}]', '暂无此功能', '0', '2018229181811');
-INSERT INTO `orders` VALUES ('13553470309', '[{\"id\":3,\"name\":\"聚乐盒(芝心)\",\"genre\":\"当季精选\",\"img\":\"jl.jpg\",\"exp\":\"随心配 75折\",\"price\":\"111.0\",\"pro\":null,\"n\":1}]', '暂无此功能', '0', '2018229191120');
+INSERT INTO `orders` VALUES ('13553470309', '[{\"id\":3,\"name\":\"聚乐盒(芝心)\",\"genre\":\"当季精选\",\"img\":\"jl.jpg\",\"exp\":\"随心配 75折\",\"price\":\"111.0\",\"pro\":null,\"n\":1}]', '暂无此功能', '1', '2018229191120');
 INSERT INTO `orders` VALUES ('13553470309', '[{\"id\":3,\"name\":\"聚乐盒(芝心)\",\"genre\":\"当季精选\",\"img\":\"jl.jpg\",\"exp\":\"随心配 75折\",\"price\":\"111.0\",\"pro\":null,\"n\":1}]', '暂无此功能', '0', '201822919127');
 INSERT INTO `orders` VALUES ('18374875141', '[{\"id\":1,\"name\":\"超级至尊比萨\",\"genre\":\"当季精选\",\"img\":\"bs.jpg\",\"exp\":\"芝心半价，每单限一份\",\"price\":\"94.0\",\"pro\":\"芝普装\",\"n\":1}]', '暂无此功能', '0', '2018229191741');
 INSERT INTO `orders` VALUES ('13553470309', '[{\"id\":31,\"name\":\"美式至尊四拼比萨\",\"genre\":\"比萨\",\"img\":\"bs5.jpg\",\"exp\":null,\"price\":\"97.0\",\"pro\":\"芝普装\",\"n\":1}]', '暂无此功能', '0', '2018229192421');
@@ -274,8 +289,15 @@ INSERT INTO `orders` VALUES ('13432851642', '[{\"id\":2,\"name\":\"新奥尔良�
 INSERT INTO `orders` VALUES ('15876595040', '[{\"id\":27,\"name\":\"超级至尊比萨\",\"genre\":\"比萨\",\"img\":\"bs.jpg\",\"exp\":\"芝心半价，每单限一份\",\"price\":\"94.0\",\"pro\":\"芝普装\",\"n\":1},{\"id\":53,\"name\":\"意式肉酱面\",\"genre\":\"意面\",\"img\":\"ym1.jpg\",\"exp\":null,\"price\":\"35.0\",\"pro\":\"份\",\"n\":1},{\"id\":50,\"name\":\"欧式培根炒饭\",\"genre\":\"饭食\",\"img\":\"fs5.jpg\",\"exp\":null,\"price\":\"27.0\",\"pro\":\"份\",\"n\":1},{\"id\":60,\"name\":\"异域燃情翅\",\"genre\":\"小吃\",\"img\":\"hdc5.jpg\",\"exp\":\"\",\"price\":\"15.0\",\"pro\":\"(份)\",\"n\":1},{\"id\":98,\"name\":\"和风榴莲卷\",\"genre\":\"甜点\",\"img\":\"td6.jpg\",\"exp\":\"新品\",\"price\":\"8.0\",\"pro\":\"份\",\"n\":2}]', '暂无此功能', '0', '201823014619');
 INSERT INTO `orders` VALUES ('15876595040', '[{\"id\":99,\"name\":\"和风抹茶卷(1只装)\",\"genre\":\"甜点\",\"img\":\"td7.jpg\",\"exp\":\"新品\",\"price\":\"8.0\",\"pro\":\"份\",\"n\":1},{\"id\":50,\"name\":\"欧式培根炒饭\",\"genre\":\"饭食\",\"img\":\"fs5.jpg\",\"exp\":null,\"price\":\"27.0\",\"pro\":\"份\",\"n\":1},{\"id\":7,\"name\":\"甄选和风四拼比萨\",\"genre\":\"当季精选\",\"img\":\"bs4.jpg\",\"exp\":null,\"price\":\"106.0\",\"pro\":\"芝普装\",\"n\":1},{\"id\":8,\"name\":\"美式至尊四拼比萨\",\"genre\":\"当季精选\",\"img\":\"bs5.jpg\",\"exp\":null,\"price\":\"97.0\",\"pro\":\"芝普装\",\"n\":1}]', '暂无此功能', '0', '201823014731');
 INSERT INTO `orders` VALUES ('13212341234', '[{\"id\":27,\"name\":\"超级至尊比萨\",\"genre\":\"比萨\",\"img\":\"bs.jpg\",\"exp\":\"芝心半价，每单限一份\",\"price\":\"94.0\",\"pro\":\"芝普装\",\"n\":63}]', '暂无此功能', '0', '2018230141029');
-INSERT INTO `orders` VALUES ('13553470309', '[{\"id\":2,\"name\":\"新奥尔良风情烤肉比萨\",\"genre\":\"当季精选\",\"img\":\"bs1.jpg\",\"exp\":\"芝心半价，每单限一份\",\"price\":\"90.0\",\"pro\":\"芝普装\",\"n\":2}]', '暂无此功能', '0', '20182319153');
-INSERT INTO `orders` VALUES ('13553470309', '[{\"id\":3,\"name\":\"聚乐盒(芝心)\",\"genre\":\"当季精选\",\"img\":\"jl.jpg\",\"exp\":\"随心配 75折\",\"price\":\"111.0\",\"pro\":null,\"n\":1}]', '暂无此功能', '0', '20182319159');
+INSERT INTO `orders` VALUES ('13553470309', '[{\"id\":2,\"name\":\"新奥尔良风情烤肉比萨\",\"genre\":\"当季精选\",\"img\":\"bs1.jpg\",\"exp\":\"芝心半价，每单限一份\",\"price\":\"90.0\",\"pro\":\"芝普装\",\"n\":2}]', '暂无此功能', '1', '20182319153');
+INSERT INTO `orders` VALUES ('13553470309', '[{\"id\":3,\"name\":\"聚乐盒(芝心)\",\"genre\":\"当季精选\",\"img\":\"jl.jpg\",\"exp\":\"随心配 75折\",\"price\":\"111.0\",\"pro\":null,\"n\":1}]', '暂无此功能', '1', '20182319159');
+INSERT INTO `orders` VALUES ('13432888888', '[{\"id\":74,\"name\":\"尊赏丝滑奶茶(冰)\",\"genre\":\"饮料\",\"img\":\"yl2.jpg\",\"exp\":null,\"price\":\"15.0\",\"pro\":\"标准杯\",\"n\":1}]', '暂无此功能', '0', '201831154754');
+INSERT INTO `orders` VALUES ('13432888888', '[{\"id\":1,\"name\":\"超级至尊比萨\",\"genre\":\"当季精选\",\"img\":\"bs.jpg\",\"exp\":\"芝心半价，每单限一份\",\"price\":\"94.0\",\"pro\":\"芝普装\",\"n\":1}]', '暂无此功能', '0', '201831181622');
+INSERT INTO `orders` VALUES ('13432888888', '[{\"id\":1,\"name\":\"超级至尊比萨\",\"genre\":\"当季精选\",\"img\":\"bs.jpg\",\"exp\":\"芝心半价，每单限一份\",\"price\":\"94.0\",\"pro\":\"芝普装\",\"n\":1},{\"id\":2,\"name\":\"新奥尔良风情烤肉比萨\",\"genre\":\"当季精选\",\"img\":\"bs1.jpg\",\"exp\":\"芝心半价，每单限一份\",\"price\":\"90.0\",\"pro\":\"芝普装\",\"n\":1},{\"id\":3,\"name\":\"聚乐盒(芝心)\",\"genre\":\"当季精选\",\"img\":\"jl.jpg\",\"exp\":\"随心配 75折\",\"price\":\"111.0\",\"pro\":null,\"n\":1}]', '暂无此功能', '0', '201831181630');
+INSERT INTO `orders` VALUES ('13553470309', '[{\"id\":7,\"name\":\"甄选和风四拼比萨\",\"genre\":\"当季精选\",\"img\":\"bs4.jpg\",\"exp\":null,\"price\":\"106.0\",\"pro\":\"芝普装\",\"n\":1}]', '暂无此功能', '1', '201831205327');
+INSERT INTO `orders` VALUES ('13553470309', '[{\"id\":7,\"name\":\"甄选和风四拼比萨\",\"genre\":\"当季精选\",\"img\":\"bs4.jpg\",\"exp\":null,\"price\":\"106.0\",\"pro\":\"芝普装\",\"n\":1}]', '暂无此功能', '0', '201831205917');
+INSERT INTO `orders` VALUES ('13553470309', '[{\"id\":99,\"name\":\"和风抹茶卷(1只装)\",\"genre\":\"甜点\",\"img\":\"td7.jpg\",\"exp\":\"新品\",\"price\":\"8.0\",\"pro\":\"份\",\"n\":2}]', '暂无此功能', '0', '20183121116');
+INSERT INTO `orders` VALUES ('13432888888', '[{\"id\":1,\"name\":\"超级至尊比萨\",\"genre\":\"当季精选\",\"img\":\"bs.jpg\",\"exp\":\"芝心半价，每单限一份\",\"price\":\"94.0\",\"pro\":\"芝普装\",\"n\":1}]', '暂无此功能', '0', '201832213235');
 
 -- ----------------------------
 -- Table structure for product
@@ -405,61 +427,61 @@ CREATE TABLE `users` (
   `username` varchar(255) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
   `gender` varchar(255) DEFAULT NULL,
-  `nicheng` varchar(255) DEFAULT NULL
+  `nicheng` varchar(255) DEFAULT NULL,
+  `address` text
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES ('admin', 'admin', null, null);
-INSERT INTO `users` VALUES ('a8', 'a', null, null);
-INSERT INTO `users` VALUES ('4', '4', null, null);
-INSERT INTO `users` VALUES ('ss', 'SS', null, null);
-INSERT INTO `users` VALUES ('4', '4F', null, null);
-INSERT INTO `users` VALUES ('AD', 'SD', null, null);
-INSERT INTO `users` VALUES ('S', 'D', null, null);
-INSERT INTO `users` VALUES ('2', '3', null, null);
-INSERT INTO `users` VALUES ('s', 'f', null, null);
-INSERT INTO `users` VALUES ('dd', 's', null, null);
-INSERT INTO `users` VALUES ('d', 'sd', null, null);
-INSERT INTO `users` VALUES ('34', 'df', null, null);
-INSERT INTO `users` VALUES ('3', '3', null, null);
-INSERT INTO `users` VALUES ('ef', 'ef', null, null);
-INSERT INTO `users` VALUES ('sadf', 'swd', null, null);
-INSERT INTO `users` VALUES ('sdf', 'sd', null, null);
-INSERT INTO `users` VALUES ('sd', 'djk', null, null);
-INSERT INTO `users` VALUES ('dv', 'dfd', null, null);
-INSERT INTO `users` VALUES ('sdf', 'dkj', null, null);
-INSERT INTO `users` VALUES ('sdf', 'sd', null, null);
-INSERT INTO `users` VALUES ('sdf', 'kj', null, null);
-INSERT INTO `users` VALUES ('adf', 'dgf', null, null);
-INSERT INTO `users` VALUES ('sdf', 'sd', null, null);
-INSERT INTO `users` VALUES ('df', 'def', null, null);
-INSERT INTO `users` VALUES ('df', 'df', null, null);
-INSERT INTO `users` VALUES ('sdf', '3', null, null);
-INSERT INTO `users` VALUES ('sd', 'swdf', null, null);
-INSERT INTO `users` VALUES ('sdf', 'df', null, null);
-INSERT INTO `users` VALUES ('sd', 'd', null, null);
-INSERT INTO `users` VALUES ('ee', 'er', null, null);
-INSERT INTO `users` VALUES ('we', 'erer', null, null);
-INSERT INTO `users` VALUES ('kj', 'skj', null, null);
-INSERT INTO `users` VALUES ('sdf', 'sdf', null, null);
-INSERT INTO `users` VALUES ('efre', 'ekj', null, null);
-INSERT INTO `users` VALUES ('erl', 'er', null, null);
-INSERT INTO `users` VALUES ('wer', 'wer', null, null);
-INSERT INTO `users` VALUES ('wse', 'we', null, null);
-INSERT INTO `users` VALUES ('13432888888', '111111', '先生', 'GeNa');
-INSERT INTO `users` VALUES ('15625779656', '123456', '女士', 'aaaa');
-INSERT INTO `users` VALUES ('13553470309', '123456', '女士', '哈哈哈');
-INSERT INTO `users` VALUES ('13432111111', '111111', '先生', 'GeNa');
-INSERT INTO `users` VALUES ('13432851642', '123456', '先生', '111');
-INSERT INTO `users` VALUES ('13412742555', '123456', '先生', '哈哈');
-INSERT INTO `users` VALUES ('13512742555', '123456', '先生', '广告');
-INSERT INTO `users` VALUES ('15876595040', '654321', '女士', '1234');
-INSERT INTO `users` VALUES ('13432881111', '222222', '先生', '我是dk');
-INSERT INTO `users` VALUES ('13423503403', '519832', '先生', '啦啦');
-INSERT INTO `users` VALUES ('13999999999', '999999999', '先生', 'aaaaa');
-INSERT INTO `users` VALUES ('13800138000', '111111', '先生', '11');
-INSERT INTO `users` VALUES ('13212341234', '123456', '先生', '2233');
-INSERT INTO `users` VALUES ('13553470302', '123456', '先生', '大大的');
+INSERT INTO `users` VALUES ('a8', 'a', null, null, null);
+INSERT INTO `users` VALUES ('4', '4', null, null, null);
+INSERT INTO `users` VALUES ('ss', 'SS', null, null, null);
+INSERT INTO `users` VALUES ('4', '4F', null, null, null);
+INSERT INTO `users` VALUES ('AD', 'SD', null, null, null);
+INSERT INTO `users` VALUES ('S', 'D', null, null, null);
+INSERT INTO `users` VALUES ('2', '3', null, null, null);
+INSERT INTO `users` VALUES ('s', 'f', null, null, null);
+INSERT INTO `users` VALUES ('dd', 's', null, null, null);
+INSERT INTO `users` VALUES ('d', 'sd', null, null, null);
+INSERT INTO `users` VALUES ('34', 'df', null, null, null);
+INSERT INTO `users` VALUES ('3', '3', null, null, null);
+INSERT INTO `users` VALUES ('ef', 'ef', null, null, null);
+INSERT INTO `users` VALUES ('sadf', 'swd', null, null, null);
+INSERT INTO `users` VALUES ('sdf', 'sd', null, null, null);
+INSERT INTO `users` VALUES ('sd', 'djk', null, null, null);
+INSERT INTO `users` VALUES ('dv', 'dfd', null, null, null);
+INSERT INTO `users` VALUES ('sdf', 'dkj', null, null, null);
+INSERT INTO `users` VALUES ('sdf', 'sd', null, null, null);
+INSERT INTO `users` VALUES ('sdf', 'kj', null, null, null);
+INSERT INTO `users` VALUES ('adf', 'dgf', null, null, null);
+INSERT INTO `users` VALUES ('sdf', 'sd', null, null, null);
+INSERT INTO `users` VALUES ('df', 'def', null, null, null);
+INSERT INTO `users` VALUES ('df', 'df', null, null, null);
+INSERT INTO `users` VALUES ('sdf', '3', null, null, null);
+INSERT INTO `users` VALUES ('sd', 'swdf', null, null, null);
+INSERT INTO `users` VALUES ('sdf', 'df', null, null, null);
+INSERT INTO `users` VALUES ('sd', 'd', null, null, null);
+INSERT INTO `users` VALUES ('ee', 'er', null, null, null);
+INSERT INTO `users` VALUES ('we', 'erer', null, null, null);
+INSERT INTO `users` VALUES ('kj', 'skj', null, null, null);
+INSERT INTO `users` VALUES ('sdf', 'sdf', null, null, null);
+INSERT INTO `users` VALUES ('efre', 'ekj', null, null, null);
+INSERT INTO `users` VALUES ('erl', 'er', null, null, null);
+INSERT INTO `users` VALUES ('wer', 'wer', null, null, null);
+INSERT INTO `users` VALUES ('wse', 'we', null, null, null);
+INSERT INTO `users` VALUES ('13432888888', '111111', '先生', 'GeNa', null);
+INSERT INTO `users` VALUES ('15625779656', '123456', '女士', 'aaaa', null);
+INSERT INTO `users` VALUES ('13553470309', '123456', '女士', '哈哈哈', null);
+INSERT INTO `users` VALUES ('13432111111', '111111', '先生', 'GeNa', null);
+INSERT INTO `users` VALUES ('13432851642', '123456', '先生', '111', null);
+INSERT INTO `users` VALUES ('13412742555', '123456', '先生', '哈哈', null);
+INSERT INTO `users` VALUES ('13512742555', '123456', '先生', '广告', null);
+INSERT INTO `users` VALUES ('15876595040', '654321', '女士', '1234', null);
+INSERT INTO `users` VALUES ('13432881111', '222222', '先生', '我是dk', null);
+INSERT INTO `users` VALUES ('13423503403', '519832', '先生', '啦啦', null);
+INSERT INTO `users` VALUES ('13999999999', '999999999', '先生', 'aaaaa', null);
+INSERT INTO `users` VALUES ('13800138000', '111111', '先生', '11', null);
+INSERT INTO `users` VALUES ('13212341234', '123456', '先生', '2233', null);
+INSERT INTO `users` VALUES ('13553470302', '123456', '先生', '大大的', null);
 SET FOREIGN_KEY_CHECKS=1;

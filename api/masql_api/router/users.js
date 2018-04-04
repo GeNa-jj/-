@@ -104,5 +104,28 @@ module.exports = {
                 res.send(apiResult(false,null,null,error));
             });
         });
+
+        app.post('/addAddress',(req, res)=>{
+            let address = req.body.address;
+            let username = req.body.username;
+            sql = `INSERT INTO address (phone, address)
+                            VALUES ('${username}', '${address}');`;
+            db.mysql.insert(sql).then(result=>{
+                res.send(apiResult(true));
+            }).catch(error=>{
+                res.send(apiResult(false,null,null,error));
+            });
+        });
+
+        app.get('/address',(req,res)=>{
+            let username = req.query.username;
+            
+            var sql = `select * from address where phone = '${username}'`;
+            db.mysql.insert(sql).then(data=>{
+                res.send(apiResult(true,data))
+            }).catch(error=>{
+                res.send(apiResult(false,null,null,error));
+            });
+        });
     }
 }

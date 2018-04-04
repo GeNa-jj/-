@@ -10,6 +10,9 @@ export default class CenterComponent extends React.Component{
     componentDidMount(){
         $('.header_r').html('');
     }
+    tomemberinfo(){
+        this.props.router.push('/memberinfo');
+    }
     render(){
         return  (
             <div className="center">
@@ -18,9 +21,9 @@ export default class CenterComponent extends React.Component{
                     <img src="src/assets/imgs/bg_center.jpg" className="bg_img" alt=""/>
                     <div className="user-info">
                         <div className="user-head">
-                            <img src="src/assets/imgs/touxiang.png" alt=""/>
+                            <img src="src/assets/imgs/touxiang.png" alt="" onClick={this.tomemberinfo.bind(this)}/>
                         </div>
-                        <div className="user-name">{window.sessionStorage.getItem('username')}</div>
+                        <div className="user-name">{window.sessionStorage.getItem('nicheng')}</div>
                         <a href="javascript:void(0);" >
                             <button onClick={this.exit.bind(this)}>退出登录</button>
                         </a>

@@ -1,16 +1,27 @@
-.addr{font-size:14px;height:100%;overflow:hidden;}
-.flex-y{flex-direction:column;}
-.flex{display:flex;}
-.flex-l{flex:1;}
+.addr{
+    font-size:14px;height:100%;overflow:hidden;
+    .address-all{overflow:hidden;overflow-y:auto;height: 100%;}
+    .address-list-detail{overflow:hidden;overflow-y:auto;}
 
-.address-all-bg{background-color:#f6f6f6;}
-.address-all{overflow:hidden;overflow-y:auto;}
-.address-list-detail{overflow:hidden;overflow-y:auto;}
+    .address-list-title{font-size:16px;margin:.2rem 0 .266667rem;height:1.066667rem;font-weight: 700;line-height:1.066667rem;overflow:hidden;}
+    .address-list-title-spe{margin-top:3.333333rem;text-align: center;display: none;}
 
-.address-list-title{font-size:16px;margin:.2rem 0 .266667rem;height:1.066667rem;font-weight: 700;line-height:1.066667rem;overflow:hidden;}
-.address-list-title-spe{margin-top:3.333333rem;text-align: center;}
-
-.other-style{font-size:.373333rem;height:1.066667rem;padding:0 .533333rem;}
+    .other-style{font-size:.373333rem;height:1.066667rem;padding:0 .533333rem;}
 
 
-.icon-addmarage{background:#e94f4f;font-size: .373333rem;color:#fff;width:100%;height:1.333333rem;line-height: 1.333333rem;text-align: center;bottom:0;position:absolute;z-index:100;}
+    .icon-addmarage{background:#ec4c33;font-size: .373333rem;color:#fff;width:100%;height:1.333333rem;line-height: 1.333333rem;text-align: center;z-index:100;}
+
+    .dz{
+        height: 100%;overflow: auto;padding: 0.266667rem;
+        .dzq{
+            border: 1px solid #ccc;margin: 0.133333rem;padding: 0.133333rem;border-radius: 0.133333rem;
+            .add_t{
+                justify-content: space-between;font-size: 0.426667rem;
+            }
+            .add_b{
+                font-size: 0.346667rem;
+            }
+        }
+    }
+    
+}

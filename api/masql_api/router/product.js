@@ -13,9 +13,9 @@ module.exports={
             }
             sql += "; select FOUND_ROWS() as rowsCount;";
             db.mysql.select(sql).then((data)=>{
-                res.send(data);
+                res.send(apiResult(true,data));
             }).catch((error)=>{
-                res.send(error);
+                res.send(apiResult(false,null,null,error));
             });
         });
 
@@ -24,7 +24,7 @@ module.exports={
             var sql = `select * from product where id = '${id}'`;
 
             db.mysql.select(sql).then(data=>{
-                res.send(data);
+                res.send(apiResult(true,data));
             })
         });
     }
