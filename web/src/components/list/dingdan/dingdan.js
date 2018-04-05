@@ -23,7 +23,12 @@ export default class shopfootComponent extends React.Component{
             })
             $('.listtotalqty').text(total);
             $('.listtotalprice').text(price.toFixed(1));
-            $('.totle-money').text((price+9).toFixed(1))
+            $('.totle-money').text((price+9).toFixed(1));
+
+            if(window.sessionStorage.getItem('addressaddr')){
+                  $('.a1').removeClass('hide');
+                  $('.a2').addClass('hide');
+            }
       }
       dot1(e){
             $(e.target).toggleClass('left').toggleClass('right');
@@ -52,28 +57,28 @@ export default class shopfootComponent extends React.Component{
             }
                    
       }
+      choseaddress(){
+            this.props.router.push({pathname: '/dizi', query: {choseaddress:'='}})
+      }
 	render(){
 		return(
 		   <div className="menu-shopcar child-view">
                   <Dingdanhead a={this.props.router}></Dingdanhead>
                   <div className="settlement flex-1">
                         <div className="flex center_1 addressp">
-                              <div className="flex flex-y address align-items-center">
+                              <div className="flex flex-y address align-items-center hide a1" onClick={this.choseaddress.bind(this)}>
                                     <div className="address-desc paddingLR">
                                           <div className="showAddress">
                                                 <span className="hightlight special">自取</span>
-                                                <span className="detailAddress">广州天河区天府路301号叠翠台D栋首层</span>
+                                                <span className="detailAddress">{window.sessionStorage.getItem('addressaddr')}</span>
                                           </div>
                                           <div className="showName">
-                                                <span>客户</span>13168232150
-                                          </div>
-                                    </div>
-                                    <div className="paddingLR paddingLR2">
-                                          <div className="showTime">
-                                                当日<span className="hightlight">10:25</span>
+                                                <span>{window.sessionStorage.getItem('addressname')}</span> 
+                                                <span style={{marginLeft: '20px'}}>{window.sessionStorage.getItem('addressphone')}</span>
                                           </div>
                                     </div>
                               </div>
+                              <div className="flex flex-y address align-items-center choseaddress a2" onClick={this.choseaddress.bind(this)}>请选择收货地址</div>
                         </div>
                         <div className="settlement-content">
                               <div className="baseinfo">

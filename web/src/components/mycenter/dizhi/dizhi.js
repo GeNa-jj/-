@@ -31,9 +31,17 @@ export default class dingdanComponent extends React.Component{
 	state = {
 		address: []
 	}
-	render(){
-		console.log(this.state.address)
+	ischose(e){
+		if(this.props.router.location.query){
+			var $li = $(e.target).closest('li');
+			window.sessionStorage.setItem('addressname', $li.find('.name').text());
+			window.sessionStorage.setItem('addressphone', $li.find('.phone').text());
+			window.sessionStorage.setItem('addressaddr', $li.find('p').text());
+			this.props.router.push('/dingdan');
+		}
 		     
+	}
+	render(){  
 		return(
 			<div className="flex flex-y addr">
                 <HeaderComponent a={this.props.router}/>
@@ -43,7 +51,7 @@ export default class dingdanComponent extends React.Component{
 							{
 								this.state.address.map(item=>{
 									return (
-										<li key={Math.random()} className="flex flex-y dzq">
+										<li key={Math.random()} className="flex flex-y dzq" onClick={this.ischose.bind(this)}>
 											<div className="add_t flex">
 												<div className="name">{item.name}</div>
 												<div className="phone">{item.shouji}</div>

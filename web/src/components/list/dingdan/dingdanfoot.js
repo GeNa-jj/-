@@ -8,7 +8,7 @@ export default class dingdanComponent extends React.Component{
         var items = window.sessionStorage.getItem('items');
         var order = {};
         order.items = items;
-        order.username = window.sessionStorage.getItem('username')
+        order.username = window.sessionStorage.getItem('username');
         var num = new Date();
         var n = num.getFullYear();
         var y = num.getMonth();
@@ -18,8 +18,13 @@ export default class dingdanComponent extends React.Component{
         var m=num.getSeconds();
         var orderNo = ''+n+y+r+s+f+m
         order.orderNo = orderNo;
-        order.address = '暂无此功能';
+        order.address = `${window.sessionStorage.getItem('addressname')} ${window.sessionStorage.getItem('addressphone')} ${window.sessionStorage.getItem('addressaddr')}`;
         order.status = 0;
+             
+        if($('.a1').css('display')=='none'){
+          window.alert('请选择收货地址');
+          return false;
+        }
         http.post('order',order).then(res=>{
               if(res.status){
                     window.alert('下单成功');

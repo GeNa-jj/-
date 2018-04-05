@@ -8,7 +8,7 @@ import http from '../../../../utils/httpclient'
 export default class Xiangqing extends React.Component{
     componentWillMount(){
         http.get('getorder',{username: window.sessionStorage.getItem('username')}).then(res=>{
-            // console.log(res.data[0].status);  
+            console.log(res.data);  
             
             this.setState({
                 items:res.data,
@@ -63,11 +63,13 @@ export default class Xiangqing extends React.Component{
     render(){
         var getres = [];
         var status = null;
+        var address = [];
         var num = this.props.params.orderNo*1;
         this.state.items.map((item)=>{
             if(item.orderNo == num){
                 status = item.status;
                 getres=JSON.parse(item.items);
+                address = item.address.split(' ');
             }
 
         })  
@@ -85,8 +87,8 @@ export default class Xiangqing extends React.Component{
                         <div className="dizhi">
                             <div className="dingwei"><img src="src/assets/imgs/dingwei.svg"/></div>
                             <div className="news">
-                                <h3>{this.state.username}</h3>
-                                <span className="weizhi">T-COLOR(体育东路28号(体育东华辉拉肠旁))元岗路T-COLOR(体育东路28号(体育东华辉拉肠旁))元岗路T-COLOR(体育东路28号(体育东华辉拉肠旁))元岗路</span>
+                                <h3>{address[0]} {address[1]}</h3>
+                                <span className="weizhi">{address[2]}</span>
                             </div>
                         </div>
                         <div className="mainNav"></div>
