@@ -9,7 +9,7 @@ class DatagridComponent extends React.Component{
     componentWillMount(){
         http.post('productId',{id:this.props.id}).then((res)=>{
             this.setState({
-                dataset:res,
+                dataset:res.data,
                 show:false
             })
         })

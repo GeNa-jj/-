@@ -30,7 +30,7 @@ class Dangjitexuan extends React.Component{
         // console.log(ds);
         let name = this.props.config.name;
         if(name){
-            ds = ds[name] ? ds[name].dataset.data : []
+            ds = ds[name] ? ds[name].dataset.data.data : []
             // console.log(ds);
         } else {
             ds = ds.dataset;

@@ -68,7 +68,7 @@ export default class HomeComponent extends React.Component{
                         <div className="home-activity-item">
                             <a>
                                 <p><img src="src/assets/imgs/active-item.jpg"/></p>
-                                <div>全新必胜客V享会，缤纷礼遇享不停</div>
+                                <div>全新龙门客栈V享会，缤纷礼遇享不停</div>
                             </a>
                         </div>
                     </div>
